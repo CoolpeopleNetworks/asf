@@ -69,6 +69,8 @@
  *
  * \return Status.
  */
+#include "ctrl_access.h"
+
 extern Ctrl_status sd_mmc_test_unit_ready(uint8_t slot);
 //! Instance Declaration for sd_mmc_test_unit_ready Slot O
 extern Ctrl_status sd_mmc_test_unit_ready_0(void);
