@@ -38,7 +38,6 @@
 #define SD_MMC_H_INCLUDED
 
 #include "compiler.h"
-#include "conf_sd_mmc.h"
 
 #ifdef __cplusplus
 extern "C" {
