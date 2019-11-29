@@ -4,5 +4,5 @@ project(sam)
 add_subdirectory(utils)
 
 if (NOT ASF_BOARD STREQUAL "none")
-    add_subdirectory(sam/boards/${ASF_BOARD})
+    add_subdirectory(boards/${ASF_BOARD})
 endif()
