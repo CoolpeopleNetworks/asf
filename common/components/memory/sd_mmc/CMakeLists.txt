@@ -25,9 +25,9 @@ target_link_libraries(
     PUBLIC 
         asf::common::components::memory::sd_mmc
         asf::common::services::storage::ctrl_access
+        asf::common::boards
         asf::${ASF_FAMILY_DIRECTORY}::utils
         asf::${ASF_FAMILY_DIRECTORY}::boards::${ASF_BOARD}
-        asf::common::boards
 )
 
 target_compile_definitions(asf_common_components_memory_sd_mmc_mci PRIVATE SD_MMC_SPI_MODE SD_MMC_0_MEM=ENABLE)
@@ -53,9 +53,9 @@ target_link_libraries(
     PUBLIC 
         asf::common::components::memory::sd_mmc
         asf::common::services::storage::ctrl_access
-        asf::${ASF_FAMILY_DIRECTORY}::utils
-        asf::${ASF_FAMILY_DIRECTORY}::boards
         asf::common::boards
+        asf::${ASF_FAMILY_DIRECTORY}::utils
+        asf::${ASF_FAMILY_DIRECTORY}::boards::${ASF_BOARD}
 )
 
 target_compile_definitions(asf_common_components_memory_sd_mmc_spi PRIVATE SD_MMC_SPI_MODE SD_MMC_0_MEM=ENABLE)
