@@ -11,7 +11,7 @@ target_include_directories(asf_thirdparty_fatfs_port_sam
         ${CMAKE_CURRENT_SOURCE_DIR}
 )
 
-target_link_libraries(asf_thirdparty_fatfs
+target_link_libraries(asf_thirdparty_fatfs_fatfs_port_sam
     PUBLIC
         asf::sam::drivers::rtc
 )
