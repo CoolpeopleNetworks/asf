@@ -20,4 +20,5 @@ target_link_libraries(
         asf::common::boards
         asf::common::services::clock
         asf::${ASF_FAMILY_DIRECTORY}::drivers::uart
+        asf::${ASF_FAMILY_DIRECTORY}::drivers::usart
 )
