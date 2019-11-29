@@ -2,6 +2,7 @@ cmake_minimum_required(VERSION 3.15)
 project(asf_sam_utils)
 
 add_subdirectory(fpu)
+add_subdirectory(preprocessor)
 add_subdirectory(cmsis/${ASF_CHIP_FAMILY})
 
 add_library(asf_sam_utils INTERFACE)
