@@ -17,5 +17,6 @@ target_link_libraries(
     PUBLIC 
         asf::sam::utils
         asf::common::boards
+        asf::common::services::clock
         asf::common::components::memory::sd_mmc
 )
