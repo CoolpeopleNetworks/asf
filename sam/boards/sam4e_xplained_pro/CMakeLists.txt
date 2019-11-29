@@ -1,4 +1,5 @@
-cmake_required_version(3.15)
+cmake_minimum_required(VERSION 3.15)
+project(sam4e_xplained_pro)
 
 option(CONF_BOARD_CAN "Enable support for the SAM4E CAN Peripheral" Off)
 

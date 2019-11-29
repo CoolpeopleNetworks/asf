@@ -1,4 +1,4 @@
-cmake_required_version(3.15)
+cmake_minimum_required(VERSION 3.15)
 project(sam_utils)
 
 add_library(sam_utils INTERFACE)

@@ -1,4 +1,4 @@
-cmake_required_version(3.15)
+cmake_minimum_required(VERSION 3.15)
 project(utils_cmsis_sam4e)
 
 add_library(utils_cmsis_sam4e
