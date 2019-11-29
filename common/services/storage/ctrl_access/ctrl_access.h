@@ -64,7 +64,6 @@ extern "C" {
  */
 
 #include "compiler.h"
-#include "conf_access.h"
 
 #ifndef SECTOR_SIZE
 #define SECTOR_SIZE  512
