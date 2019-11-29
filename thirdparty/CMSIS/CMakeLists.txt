@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.15)
-project(asf_third_party_cmsis)
+project(asf_thirdparty_cmsis)
 
 add_library(asf_thirdparty_cmsis INTERFACE)
 
