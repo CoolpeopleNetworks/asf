@@ -16,6 +16,15 @@ if (ASF_ENABLE_CAN)
     target_compile_definitions(asf_sam_boards_sam4e_xplained_pro PUBLIC CONF_BOARD_CAN)
 endif()
 
-target_include_directories(asf_sam_boards_sam4e_xplained_pro PRIVATE ${CMAKE_CURRENT_SOURCE_DIRECTORY})
-target_link_libraries(asf_sam_boards_sam4e_xplained_pro PRIVATE asf::common::boards asf::sam::utils asf::thirdparty::cmsis)
+target_include_directories(asf_sam_boards_sam4e_xplained_pro 
+    PRIVATE 
+        ${CMAKE_CURRENT_SOURCE_DIRECTORY}
+)
 
+target_link_libraries(asf_sam_boards_sam4e_xplained_pro 
+    PRIVATE
+        asf::sam::boards 
+        asf::common::boards 
+        asf::sam::utils 
+        asf::thirdparty::cmsis
+)
