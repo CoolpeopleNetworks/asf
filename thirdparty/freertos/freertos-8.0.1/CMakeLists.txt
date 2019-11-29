@@ -7,7 +7,7 @@ add_library(asf_thirdparty_freertos_8_0_1_portable STATIC
 )
 add_library(asf::thirdparty::freertos::8.0.1::portable ALIAS asf_thirdparty_freertos_8_0_1_portable)
 
-target_include_directories(asf_thirdparty_freertos_8_0_1 
+target_include_directories(asf_thirdparty_freertos_8_0_1_portable
     PUBLIC
         ${CMAKE_CURRENT_SOURCE_DIR}/Source/portable/GCC/ARM_CM4F
 )
