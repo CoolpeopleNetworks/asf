@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.15)
 project(asf_common_utils_stdio_stdio_serial)
 
-add_library(project(asf_common_utils_stdio_stdio_serial INTERFACE)
+add_library(asf_common_utils_stdio_stdio_serial INTERFACE)
 add_library(asf::common::utils::stdio::stdio_serial ALIAS asf_common_utils_stdio_stdio_serial)
 
 target_include_directories(asf_common_utils_stdio_stdio_serial
