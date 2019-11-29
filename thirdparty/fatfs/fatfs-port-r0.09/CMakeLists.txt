@@ -15,5 +15,6 @@ target_include_directories(asf_thirdparty_fatfs_port
 
 target_link_libraries(asf_thirdparty_fatfs_port
     PUBLIC
+        asf::thirdparty::fatfs
         asf::thirdparty::fatfs::port::${ASF_FAMILY_DIRECTORY}
 )
