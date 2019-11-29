@@ -16,4 +16,4 @@ if (ASF_ENABLE_CAN)
 endif()
 
 target_include_directories(asf_sam4e_xplained_pro PRIVATE ${CMAKE_CURRENT_SOURCE_DIRECTORY})
-target_link_libraries(asf_sam4e_xplained_pro PRIVATE sam_utils)
+target_link_libraries(asf_sam4e_xplained_pro PRIVATE sam_utils asf_thirdparty_cmsis)

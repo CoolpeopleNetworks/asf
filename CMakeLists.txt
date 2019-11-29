@@ -1,6 +1,8 @@
 cmake_minimum_required(VERSION 3.15)
 project(asf)
 
+add_subdirectory(thirdparty)
+
 if (NOT ASF_BOARD)
     set(ASF_BOARD "sam4e_xplained_pro")
 endif()
