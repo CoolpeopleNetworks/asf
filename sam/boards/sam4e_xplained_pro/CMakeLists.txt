@@ -9,11 +9,11 @@ add_library(sam4e_xplained_pro STATIC
     sam4e_xplained_pro.h
     )
 
-target_compile_definitions(sam4e_xplained_pro __SAM4E16E__)
+target_compile_definitions(sam4e_xplained_pro PUBLIC __SAM4E16E__)
 
 if (ASF_ENABLE_CAN)
-    target_compile_definitions(sam4e_xplained_pro CONF_BOARD_CAN)
+    target_compile_definitions(sam4e_xplained_pro PUBLIC CONF_BOARD_CAN)
 endif()
 
-target_include_directory(sam4e_xplained_pro PRIVATE ${CMAKE_CURRENT_SOURCE_DIRECTORY})
+target_include_directories(sam4e_xplained_pro PRIVATE ${CMAKE_CURRENT_SOURCE_DIRECTORY})
 
