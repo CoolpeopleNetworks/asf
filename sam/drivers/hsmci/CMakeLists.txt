@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.15)
 project(asf_sam_drivers_hsmci)
 
-add_library(asf_sam_drivers_efc STATIC
+add_library(asf_sam_drivers_hsmci STATIC
     hsmci.c
     hsmci.h
 )
