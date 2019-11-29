@@ -1,19 +1,19 @@
 cmake_minimum_required(VERSION 3.15)
-project(sam4e_xplained_pro)
+project(asf_sam4e_xplained_pro)
 
 option(CONF_BOARD_CAN "Enable support for the SAM4E CAN Peripheral" Off)
 
-add_library(sam4e_xplained_pro STATIC
+add_library(asf_sam4e_xplained_pro STATIC
     init.c
     led.h
     sam4e_xplained_pro.h
     )
+add_library(ASF::sam4e_xplained_pro ALIAS asf_sam4e_xplained_pro)
 
-target_compile_definitions(sam4e_xplained_pro PUBLIC __SAM4E16E__)
+target_compile_definitions(asf_sam4e_xplained_pro PUBLIC __SAM4E16E__)
 
 if (ASF_ENABLE_CAN)
-    target_compile_definitions(sam4e_xplained_pro PUBLIC CONF_BOARD_CAN)
+    target_compile_definitions(asf_sam4e_xplained_pro PUBLIC CONF_BOARD_CAN)
 endif()
 
-target_include_directories(sam4e_xplained_pro PRIVATE ${CMAKE_CURRENT_SOURCE_DIRECTORY})
-
+target_include_directories(asf_sam4e_xplained_pro PRIVATE ${CMAKE_CURRENT_SOURCE_DIRECTORY})
