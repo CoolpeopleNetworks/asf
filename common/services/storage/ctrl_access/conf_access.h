@@ -1,9 +1,3 @@
-// Coolpeople Networks default ctrl_access.h
-#pragma once
-
-#ifndef _CONF_ACCESS_H_
-#define _CONF_ACCESS_H_
-
 /*****************************************************************************
  *
  * \file
