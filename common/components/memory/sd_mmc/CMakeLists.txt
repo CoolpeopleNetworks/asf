@@ -8,8 +8,6 @@ target_include_directories(asf_common_components_memory_sd_mmc INTERFACE ${CMAKE
 add_library(asf_common_components_memory_sd_mmc_mci STATIC
     sd_mmc_mem.c
     sd_mmc_mem.h
-    sd_mmc_spi.c
-    sd_mmc_spi.h
     sd_mmc.c
     sd_mmc.h
 )
@@ -35,8 +33,6 @@ target_compile_definitions(asf_common_components_memory_sd_mmc_mci PRIVATE SD_MM
 
 # add_library(asf_common_components_memory_sd_mmc_spi STATIC
 #     conf_sd_mmc.h
-#     sd_mmc_mem.c
-#     sd_mmc_mem.h
 #     sd_mmc_spi.c
 #     sd_mmc_spi.h
 #     sd_mmc.c
