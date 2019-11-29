@@ -34,8 +34,6 @@
  * Support and FAQ: visit <a href="https://www.microchip.com/support/">Microchip Support</a>
  */
 
-#include <asf.h>
-#include "conf_board.h"
 #include "sd_mmc_protocol.h"
 #include "sysclk.h"
 #include "pmc.h"
