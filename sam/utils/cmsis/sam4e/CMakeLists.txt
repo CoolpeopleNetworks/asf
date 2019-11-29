@@ -8,7 +8,6 @@ add_library(utils_cmsis_sam4e STATIC
     source/templates/system_sam4e.c
     source/templates/system_sam4e.h
     )
+add_library(ASF::startup_SAM4E ALIAS utils_cmsis_sam4e)
 
 target_include_directories(utils_cmsis_sam4e PRIVATE include)
-
-add_library(ASF::startup_SAM4E alias utils_cmsis_sam4e)
