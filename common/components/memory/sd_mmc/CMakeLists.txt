@@ -28,6 +28,7 @@ target_link_libraries(
         asf::common::boards
         asf::${ASF_FAMILY_DIRECTORY}::utils
         asf::${ASF_FAMILY_DIRECTORY}::boards::${ASF_BOARD}
+        asf::${ASF_FAMILY_DIRECTORY}::drivers::hsmci
 )
 
 target_compile_definitions(asf_common_components_memory_sd_mmc_mci PRIVATE SD_MMC_0_MEM=ENABLE)
@@ -56,6 +57,7 @@ target_compile_definitions(asf_common_components_memory_sd_mmc_mci PRIVATE SD_MM
 #         asf::common::boards
 #         asf::${ASF_FAMILY_DIRECTORY}::utils
 #         asf::${ASF_FAMILY_DIRECTORY}::boards::${ASF_BOARD}
+#         asf::${ASF_FAMILY_DIRECTORY}::drivers::hsmci
 # )
 
 # target_compile_definitions(asf_common_components_memory_sd_mmc_spi PRIVATE SD_MMC_SPI_MODE SD_MMC_0_MEM=ENABLE)
