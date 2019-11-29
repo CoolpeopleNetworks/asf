@@ -1,9 +1,9 @@
 cmake_minimum_required(VERSION 3.15)
-project(sam_utils)
+project(asf_sam_utils)
 
-add_library(sam_utils INTERFACE)
-target_include_directories(sam_utils INTERFACE ${CMAKE_CURRENT_SOURCE_DIRECTORY})
+add_library(asf_sam_utils INTERFACE)
+target_include_directories(asf_sam_utils INTERFACE ${CMAKE_CURRENT_SOURCE_DIRECTORY})
 
 add_subdirectory(cmsis/${ASF_CHIP_FAMILY})
 
-target_link_libraries(sam_utils INTERFACE sam_utils_cmsis_${ASF_CHIP_FAMILY})
+target_link_libraries(asf_sam_utils INTERFACE asf_sam_utils_cmsis_${ASF_CHIP_FAMILY})
