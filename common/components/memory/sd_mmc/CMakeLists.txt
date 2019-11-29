@@ -53,4 +53,4 @@ target_link_libraries(
         asf::common::boards
 )
 
-target_compile_definitions(asf_common_components_memory_sd_mmc_api PRIVATE SD_MMC_SPI_MODE)
+target_compile_definitions(asf_common_components_memory_sd_mmc_spi PRIVATE SD_MMC_SPI_MODE)
