@@ -18,4 +18,5 @@ target_link_libraries(
     PUBLIC 
         asf::common::utils
         asf::common::boards
+        asf::common::services::clock
 )
