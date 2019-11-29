@@ -9,7 +9,6 @@ add_library(asf_sam4e_xplained_pro STATIC
     sam4e_xplained_pro.h
     )
 add_library(ASF::sam4e_xplained_pro ALIAS asf_sam4e_xplained_pro)
-
 target_compile_definitions(asf_sam4e_xplained_pro PUBLIC __SAM4E16E__)
 
 if (ASF_ENABLE_CAN)
@@ -17,3 +16,4 @@ if (ASF_ENABLE_CAN)
 endif()
 
 target_include_directories(asf_sam4e_xplained_pro PRIVATE ${CMAKE_CURRENT_SOURCE_DIRECTORY})
+target_link_libraries(asf_sam4e_xplained_pro PRIVATE sam_utils)
