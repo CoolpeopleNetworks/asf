@@ -25,6 +25,7 @@ target_link_libraries(
     PUBLIC 
         asf::common::components::memory::sd_mmc
         asf::common::services::storage::ctrl_access
+        asf::common::services::ioport
         asf::common::boards
         asf::${ASF_FAMILY_DIRECTORY}::utils
         asf::${ASF_FAMILY_DIRECTORY}::boards::${ASF_BOARD}
