@@ -3,6 +3,6 @@ project(sam)
 
 add_subdirectory(utils)
 
-if (ASF_BOARD != "none")
+if (NOT ASF_BOARD STREQUAL "none")
     add_subdirectory(sam/boards/${ASF_BOARD})
 endif()
