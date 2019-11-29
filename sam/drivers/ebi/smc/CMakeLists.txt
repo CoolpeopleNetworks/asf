@@ -17,5 +17,5 @@ target_link_libraries(
     PUBLIC 
         asf::sam::utils
         asf::common::boards
-        asf::${ASF_FAMILY_DIRECTORY}::boards::${ASF_CHIP_FAMILY}
+        asf::${ASF_FAMILY_DIRECTORY}::boards::${ASF_BOARD}
 )
