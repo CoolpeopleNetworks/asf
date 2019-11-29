@@ -3,7 +3,7 @@ project(sam4e_xplained_pro)
 
 option(CONF_BOARD_CAN "Enable support for the SAM4E CAN Peripheral" Off)
 
-add_library(sam4e_xplained_pro
+add_library(sam4e_xplained_pro STATIC
     init.c
     led.h
     sam4e_xplained_pro.h
