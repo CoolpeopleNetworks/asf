@@ -10,6 +10,7 @@ add_library(asf::thirdparty::freertos::8.0.1::portable ALIAS asf_thirdparty_free
 target_include_directories(asf_thirdparty_freertos_8_0_1_portable
     PUBLIC
         ${CMAKE_CURRENT_SOURCE_DIR}/Source/portable/GCC/ARM_CM4F
+        ${CMAKE_CURRENT_SOURCE_DIR}/module_config
         ${CMAKE_CURRENT_SOURCE_DIR}/Source/include
 )
 
