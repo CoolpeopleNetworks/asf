@@ -11,4 +11,4 @@ add_library(utils_cmsis_sam4e STATIC
 
 target_include_directories(utils_cmsis_sam4e PRIVATE include)
 
-add_library(ASF::Startup::SAM4E alias utils_cmsis_sam4e)
+add_library(ASF::startup_SAM4E alias utils_cmsis_sam4e)
