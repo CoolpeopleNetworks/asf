@@ -29,6 +29,8 @@ target_link_libraries(
         asf::common::boards
 )
 
+target_compile_definitions(asf_common_components_memory_sd_mmc_mci PRIVATE SD_MMC_SPI_MODE SD_MMC_0_MEM=ENABLE)
+
 add_library(asf_common_components_memory_sd_mmc_spi STATIC
     sd_mmc_mem.c
     sd_mmc_mem.h
@@ -53,4 +55,4 @@ target_link_libraries(
         asf::common::boards
 )
 
-target_compile_definitions(asf_common_components_memory_sd_mmc_spi PRIVATE SD_MMC_SPI_MODE)
+target_compile_definitions(asf_common_components_memory_sd_mmc_spi PRIVATE SD_MMC_SPI_MODE SD_MMC_0_MEM=ENABLE)
