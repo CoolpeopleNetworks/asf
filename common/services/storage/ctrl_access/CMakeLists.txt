@@ -18,7 +18,9 @@ target_link_libraries(
     asf_common_services_storage_ctrl_access 
     PUBLIC 
         asf::common::utils
+        asf::common::boards
         asf::${ASF_FAMILY_DIRECTORY}::utils
+        asf::${ASF_FAMILY_DIRECTORY}::boards
 )
 
 target_compile_definitions(
