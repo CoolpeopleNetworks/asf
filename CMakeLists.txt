@@ -1,6 +1,7 @@
 cmake_minimum_required(VERSION 3.15)
 project(asf)
 
+add_subdirectory(common)
 add_subdirectory(thirdparty)
 
 if (NOT ASF_BOARD)
