@@ -11,6 +11,5 @@ target_link_libraries(
     asf_common_services
     INTERFACE
         asf::common::services::ioport
-    PUBLIC
         asf::common::services::clock
 )
