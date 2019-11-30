@@ -18,5 +18,6 @@ target_link_libraries(
     asf_sam_drivers_pmc 
     PUBLIC 
         asf::sam::utils
+        asf::sam::boards
         asf::common::boards
 )
