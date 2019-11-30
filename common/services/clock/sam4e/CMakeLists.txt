@@ -12,7 +12,7 @@ add_library(asf_common_services_clock_sam4e STATIC
 
 add_library(asf::common::services::clock::sam4e ALIAS asf_common_services_clock_sam4e)
 
-target_include_libraries(
+target_include_directories(
     asf_common_services_clock_sam4e
     PUBLIC
         ${CMAKE_CURRENT_SOURCE_DIR}
