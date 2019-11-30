@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.15)
 project(asf_sam_boards_sam4e_xplained_pro)
 
-option(CONF_BOARD_CAN "Enable support for the SAM4E CAN Peripheral" Off)
+option(ASF_ENABLE_CAN "Enable support for the SAM4E CAN Peripheral" Off)
 
 add_library(asf_sam_boards_sam4e_xplained_pro STATIC
     init.c
