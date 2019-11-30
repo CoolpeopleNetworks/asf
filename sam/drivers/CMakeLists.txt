@@ -2,11 +2,5 @@ cmake_minimum_required(VERSION 3.15)
 project(asf_sam_drivers)
 
 add_subdirectory(pmc)
-
-if (ASF_ENABLE_CAN)
-    add_subdirectory(can)
-endif()
-
-if (ASF_ENABLE_EFC)
-    add_subdirectory(efc)
-endif()
+add_subdirectory(can)
+add_subdirectory(efc)
