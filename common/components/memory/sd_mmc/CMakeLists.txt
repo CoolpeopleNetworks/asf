@@ -24,6 +24,7 @@ target_link_libraries(
     asf_common_components_memory_sd_mmc_mci
     PUBLIC 
         asf::common::components::memory::sd_mmc
+        asf::common::services::storage::ctrl_access
         asf::${ASF_FAMILY_DIRECTORY}::utils
         asf::${ASF_FAMILY_DIRECTORY}::boards
         asf::common::boards
@@ -50,6 +51,7 @@ target_link_libraries(
     asf_common_components_memory_sd_mmc_spi
     PUBLIC 
         asf::common::components::memory::sd_mmc
+        asf::common::services::storage::ctrl_access
         asf::${ASF_FAMILY_DIRECTORY}::utils
         asf::${ASF_FAMILY_DIRECTORY}::boards
         asf::common::boards
