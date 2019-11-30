@@ -1,7 +1,8 @@
 cmake_minimum_required(VERSION 3.15)
 project(asf_sam_boards_sam4e_xplained_pro)
 
-option(ASF_ENABLE_CAN "Enable support for the SAM4E CAN Peripheral" Off)
+option(ASF_ENABLE_CAN "Enable support for the Controller Area Network (CAN) Peripheral" Off)
+option(ASF_ENABLE_SRAM "Enable support for the external SRAM interface" Off)
 
 add_library(asf_sam_boards_sam4e_xplained_pro STATIC
     init.c
@@ -14,6 +15,10 @@ target_compile_definitions(asf_sam_boards_sam4e_xplained_pro PUBLIC __SAM4E16E__
 
 if (ASF_ENABLE_CAN)
     target_compile_definitions(asf_sam_boards_sam4e_xplained_pro PUBLIC CONF_BOARD_CAN)
+endif()
+
+if (ASF_ENABLE_SRAM)
+    target_compile_definitions(asf_sam_boards_sam4e_xplained_pro PUBLIC CONF_BOARD_SRAM)
 endif()
 
 target_include_directories(

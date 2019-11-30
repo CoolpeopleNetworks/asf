@@ -6,3 +6,7 @@ add_subdirectory(pmc)
 if (ASF_ENABLE_CAN)
     add_subdirectory(can)
 endif()
+
+if (ASF_ENABLE_EFC)
+    add_subdirectory(efc)
+endif()
