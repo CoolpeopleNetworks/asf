@@ -16,6 +16,5 @@ target_link_libraries(
     asf_common_services_clock
     INTERFACE
         asf::common::services::ioport
-    PUBLIC
         asf::common::services::clock::${ASF_CHIP_FAMILY}
 )
