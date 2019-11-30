@@ -14,5 +14,5 @@ target_link_libraries(
     asf_common_services_ipoort 
     INTERFACE 
         asf::common::utils
-        asf::${ASF_FAMILY_DIRECTOR}::utils
+        asf::${ASF_FAMILY_DIRECTORY}::utils
 )
