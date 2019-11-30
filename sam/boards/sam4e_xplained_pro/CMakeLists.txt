@@ -8,7 +8,7 @@ add_library(asf_sam_boards_sam4e_xplained_pro STATIC
     led.h
     sam4e_xplained_pro.h
     )
-add_library(ASF::sam::boards::sam4e_xplained_pro ALIAS asf_sam_boards_sam4e_xplained_pro)
+add_library(asf::sam::boards::sam4e_xplained_pro ALIAS asf_sam_boards_sam4e_xplained_pro)
 
 target_compile_definitions(asf_sam_boards_sam4e_xplained_pro PUBLIC __SAM4E16E__)
 
