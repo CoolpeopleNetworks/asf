@@ -3,6 +3,7 @@ project(asf_sam_boards_sam4e_xplained_pro)
 
 option(ASF_ENABLE_CAN "Enable support for the Controller Area Network (CAN) Peripheral" Off)
 option(ASF_ENABLE_SRAM "Enable support for the external SRAM interface" Off)
+option(ASF_ENABLE_SD_MMC_HSMCI "Enable support for the SD Card" Off)
 
 add_library(asf_sam_boards_sam4e_xplained_pro STATIC
     init.c
@@ -19,6 +20,10 @@ endif()
 
 if (ASF_ENABLE_SRAM)
     target_compile_definitions(asf_sam_boards_sam4e_xplained_pro PUBLIC CONF_BOARD_SRAM)
+endif()
+
+if (ASF_ENABLE_SD_MMC_HSMCI)
+    target_compile_definitions(asf_sam_boards_sam4e_xplained_pro PUBLIC CONF_BOARD_SD_MMC_HSMCI)
 endif()
 
 target_include_directories(
