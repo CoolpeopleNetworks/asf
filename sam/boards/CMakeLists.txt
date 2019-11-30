@@ -1,9 +1,7 @@
 cmake_minimum_required(VERSION 3.15)
 project(asf_sam_boards)
 
-if (NOT ASF_BOARD STREQUAL "none")
-    add_subdirectory(boards/${ASF_BOARD})
-endif()
+add_subdirectory(${ASF_BOARD})
 
 add_library(asf_sam_boards INTERFACE)
 add_library(asf::sam::boards ALIAS asf_sam_boards)
