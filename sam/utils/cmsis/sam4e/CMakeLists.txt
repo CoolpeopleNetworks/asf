@@ -10,5 +10,5 @@ add_library(asf_sam_utils_cmsis_sam4e STATIC
     )
 add_library(ASF::startup_SAM4E ALIAS asf_sam_utils_cmsis_sam4e)
 
-target_include_directories(asf_sam_utils_cmsis_sam4e PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/source ${CMAKE_CURRENT_SOURCE_DIR}/include)
+target_include_directories(asf_sam_utils_cmsis_sam4e PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/source/templates ${CMAKE_CURRENT_SOURCE_DIR}/include)
 target_link_libraries(asf_sam_utils_cmsis_sam4e PRIVATE asf_thirdparty_cmsis)
