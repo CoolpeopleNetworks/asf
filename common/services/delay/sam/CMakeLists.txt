@@ -17,4 +17,5 @@ target_link_libraries(
     asf_common_services_delay_sam
     PUBLIC
         asf::sam::utils
+        asf::common::services::clock
 )
