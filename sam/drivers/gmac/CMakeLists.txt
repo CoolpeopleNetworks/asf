@@ -6,7 +6,9 @@ add_library(asf::sam::drivers::gmac ALIAS asf_sam_drivers_gmac)
 
 target_include_directories(asf_sam_drivers_gmac
     INTERFACE
-        ${CMAKE_CURRENT_SOURCE_DIR})
+        ${CMAKE_CURRENT_SOURCE_DIR}
+        ${CMAKE_CURRENT_SOURCE_DIR}/module_config
+)
 
 add_library(asf_sam_drivers_gmac_ksz8051mnl STATIC
     gmac_phy.c
@@ -16,17 +18,12 @@ add_library(asf_sam_drivers_gmac_ksz8051mnl STATIC
 )
 add_library(asf::sam::drivers::gmac::ksz8051mnl ALIAS asf_sam_drivers_gmac_ksz8051mnl)
 
-target_include_directories(asf_sam_drivers_gmac_ksz8051mnl
-    PUBLIC 
-        ${CMAKE_CURRENT_SOURCE_DIR}
-        ${CMAKE_CURRENT_SOURCE_DIR}/module_config
-)
-
 target_link_libraries(
     asf_sam_drivers_gmac_ksz8051mnl
     PUBLIC 
         asf::sam::utils
         asf::common::boards
+        asf::sam::driver::gmac
 )
 
 add_library(asf_sam_drivers_gmac_ksz8061rnb STATIC
@@ -37,15 +34,10 @@ add_library(asf_sam_drivers_gmac_ksz8061rnb STATIC
 )
 add_library(asf::sam::drivers::gmac::ksz8061rnb ALIAS asf_sam_drivers_gmac_ksz8061rnb)
 
-target_include_directories(asf_sam_drivers_gmac_ksz8061rnb
-    PUBLIC 
-        ${CMAKE_CURRENT_SOURCE_DIR}
-        ${CMAKE_CURRENT_SOURCE_DIR}/module_config
-)
-
 target_link_libraries(
     asf_sam_drivers_gmac_ksz8061rnb
     PUBLIC 
         asf::sam::utils
         asf::common::boards
+        asf::sam::driver::gmac
 )
