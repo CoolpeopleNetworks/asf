@@ -23,7 +23,7 @@ target_link_libraries(
     PUBLIC 
         asf::sam::utils
         asf::common::boards
-        asf::sam::driver::gmac
+        asf::sam::drivers::gmac
 )
 
 add_library(asf_sam_drivers_gmac_ksz8061rnb STATIC
@@ -39,5 +39,5 @@ target_link_libraries(
     PUBLIC 
         asf::sam::utils
         asf::common::boards
-        asf::sam::driver::gmac
+        asf::sam::drivers::gmac
 )
