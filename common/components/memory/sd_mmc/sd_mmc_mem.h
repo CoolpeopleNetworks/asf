@@ -51,6 +51,9 @@
  * @{
  */
 
+#include "conf_access.h"
+#include "ctrl_access.h"
+
 #if (SD_MMC_0_MEM == ENABLE) || (SD_MMC_1_MEM == ENABLE)
 
 /*! \name Control Interface
@@ -69,7 +72,6 @@
  *
  * \return Status.
  */
-#include "ctrl_access.h"
 
 extern Ctrl_status sd_mmc_test_unit_ready(uint8_t slot);
 //! Instance Declaration for sd_mmc_test_unit_ready Slot O
