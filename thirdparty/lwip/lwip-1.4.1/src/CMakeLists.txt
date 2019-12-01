@@ -46,6 +46,7 @@ target_include_directories(
     asf_thirdparty_lwip_1_4_1
     PUBLIC
         ${CMAKE_CURRENT_SOURCE_DIR}/include
+        ${CMAKE_CURRENT_SOURCE_DIR}/include/ipv4
         ${CMAKE_CURRENT_SOURCE_DIR}/module_config
 )
 
