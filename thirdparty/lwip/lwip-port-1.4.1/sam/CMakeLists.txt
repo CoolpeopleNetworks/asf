@@ -19,4 +19,5 @@ target_link_libraries(
     PUBLIC 
         asf::common::boards
         asf::sam::utils
+        asf::thirdparty::lwip::1.4.1
 )
