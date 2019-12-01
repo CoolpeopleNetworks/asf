@@ -1,6 +1,13 @@
 cmake_minimum_required(VERSION 3.15)
 project(asf_sam_drivers_gmac)
 
+add_library(asf_sam_drivers_gmac INTERFACE)
+add_library(asf::sam::drivers::gmac ALIAS asf_sam_drivers_gmac)
+
+target_include_directories(asf_sam_drivers_gmac
+    INTERFACE
+        ${CMAKE_CURRENT_SOURCE_DIR})
+
 add_library(asf_sam_drivers_gmac_ksz8051mnl STATIC
     gmac_phy.c
     gmac_raw.c
