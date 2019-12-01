@@ -25,7 +25,7 @@ add_library(asf_thirdparty_lwip_1_4_1 STATIC
     core/dns.c
     core/lwip_init.c
     core/lwip_timers_141.c
-    core/core/mem.c
+    core/mem.c
     core/memp.c
     core/netif.c
     core/pbuf.c
