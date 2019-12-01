@@ -1,0 +1,34 @@
+cmake_minimum_required(VERSION 3.15)
+project(asf_thirdparty_freertos_8_0_1)
+
+add_library(asf_thirdparty_freertos_8_0_1_portable STATIC
+    Source/portable/GCC/ARM_CM4F/port.c
+    Source/portable/GCC/ARM_CM4F/portmacro.h
+}
+add_library(asf::thirdparty::freertos::8.0.1::portable ALIAS asf_thirdparty_freertos_8_0_1_portable)
+
+target_include_directories(asf_thirdparty_freertos_8_0_1 
+    PUBLIC
+        ${CMAKE_CURRENT_SOURCE_DIR}/Source/portable/GCC/ARM_CM4F
+)
+
+add_library(asf_thirdparty_freertos_8_0_1 STATIC
+    Source/croutine.c
+    Source/event_groups.c
+    Source/list.c
+    Source/queue.c
+    Source/tasks.c
+    Source/timers.c
+)
+add_library(asf::thirdparty::freertos::8.0.1 ALIAS asf_thirdparty_freertos_8_0_1)
+
+target_include_directories(asf_thirdparty_freertos_8_0_1 
+    PUBLIC
+        ${CMAKE_CURRENT_SOURCE_DIR}/Source
+        ${CMAKE_CURRENT_SOURCE_DIR}/Source/include
+)
+
+target_link_libraries(asf_thirdparty_freertos_8_0_1
+    PUBLIC
+        asf::thirdparty::freertos::8.0.1::portable
+)
