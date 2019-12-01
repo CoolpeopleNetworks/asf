@@ -28,7 +28,7 @@ endif()
 
 target_include_directories(
     asf_sam_boards_sam4e_xplained_pro 
-    PRIVATE 
+    PUBLIC 
         ${CMAKE_CURRENT_SOURCE_DIR}
         ${CMAKE_CURRENT_SOURCE_DIR}/board_config
 )
