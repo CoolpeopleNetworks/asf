@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.15)
-project(asf_thirdparty_fatfs_fatfs_port)
+project(asf_thirdparty_fatfs_port)
 
 add_subdirectory(${ASF_FAMILY_DIRECTORY})
 
@@ -13,7 +13,7 @@ target_include_directories(asf_thirdparty_fatfs_port
         ${CMAKE_CURRENT_SOURCE_DIR}
 )
 
-target_link_libraries(asf_thirdparty_fatfs
+target_link_libraries(asf_thirdparty_fatfs_port
     PUBLIC
         asf::thirdparty::fatfs::port::${ASF_FAMILY_DIRECTORY}
 )
