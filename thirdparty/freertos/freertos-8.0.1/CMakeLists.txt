@@ -7,6 +7,7 @@ add_library(asf::thirdparty::freertos ALIAS asf_thirdparty_freertos)
 target_include_directories(asf_thirdparty_freertos
     INTERFACE
         ${CMAKE_CURRENT_SOURCE_DIR}/Source/include
+        ${CMAKE_CURRENT_SOURCE_DIR}/module_config
 )
 
 add_library(asf_thirdparty_freertos_8_0_1_portable STATIC
