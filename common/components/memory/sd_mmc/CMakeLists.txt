@@ -33,6 +33,7 @@ target_link_libraries(
 target_compile_definitions(asf_common_components_memory_sd_mmc_mci PRIVATE SD_MMC_SPI_MODE SD_MMC_0_MEM=ENABLE)
 
 add_library(asf_common_components_memory_sd_mmc_spi STATIC
+    conf_sd_mmc.h
     sd_mmc_mem.c
     sd_mmc_mem.h
     sd_mmc_spi.c
