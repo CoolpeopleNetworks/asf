@@ -3,8 +3,8 @@ project(asf_thirdparty_lwip_port_1_4_1)
 
 add_library(asf_thirdparty_lwip_port_1_4_1 STATIC
     sys_arch.c
-    ethernetif_sam4.c
-    sam4e_gmac.c
+    netif/ethernetif_sam4.c
+    netif/sam4e_gmac.c
 )
 add_library(asf::thirdparty::lwip::1.4.1::port ALIAS asf_thirdparty_lwip_port_1_4_1)
 
