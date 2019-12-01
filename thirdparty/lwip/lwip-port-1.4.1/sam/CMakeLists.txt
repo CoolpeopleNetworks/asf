@@ -19,4 +19,5 @@ target_link_libraries(
     PUBLIC 
         asf::common::boards
         asf::sam::utils
+        asf::thirdparty::freertos
 )
