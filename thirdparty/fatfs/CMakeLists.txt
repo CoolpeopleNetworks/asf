@@ -14,6 +14,7 @@ add_library(asf::thirdparty::fatfs ALIAS asf_thirdparty_fatfs)
 
 target_include_directories(asf_thirdparty_fatfs 
     PUBLIC
+        ${CMAKE_CURRENT_SOURCE_DIR}
         ${CMAKE_CURRENT_SOURCE_DIR}/fatfs-r0.09/src
 )
 
