@@ -1445,7 +1445,7 @@
 
 /* ---------- Socket Options ---------- */
 
-#ifdef __GNUC__
+#if defined(__GNUC__) || defined(__clang__)
 // Do not use the lwip timeval structure.
 #define LWIP_TIMEVAL_PRIVATE            0
 // Use the gnu libc struct timeval instead.
