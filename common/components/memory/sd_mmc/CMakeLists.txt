@@ -30,7 +30,7 @@ target_link_libraries(
         asf::${ASF_FAMILY_DIRECTORY}::boards::${ASF_BOARD}
 )
 
-target_compile_definitions(asf_common_components_memory_sd_mmc_mci PRIVATE SD_MMC_SPI_MODE SD_MMC_0_MEM=ENABLE)
+target_compile_definitions(asf_common_components_memory_sd_mmc_mci PRIVATE SD_MMC_0_MEM=ENABLE)
 
 # add_library(asf_common_components_memory_sd_mmc_spi STATIC
 #     conf_sd_mmc.h
