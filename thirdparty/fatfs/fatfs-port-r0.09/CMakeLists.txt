@@ -17,4 +17,5 @@ target_link_libraries(asf_thirdparty_fatfs_port
     PUBLIC
         asf::thirdparty::fatfs
         asf::thirdparty::fatfs::port::${ASF_FAMILY_DIRECTORY}
+        asf::common::services::storage::ctrl_access
 )
