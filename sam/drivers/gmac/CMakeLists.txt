@@ -1,43 +1,43 @@
 cmake_minimum_required(VERSION 3.15)
 project(asf_sam_drivers_gmac)
 
-add_library(asf_sam_drivers_gmac_KSZ8051MNL STATIC
+add_library(asf_sam_drivers_gmac_ksz8051mnx STATIC
     gmac_phy.c
     gmac_raw.c
     gmac_raw.h
     gmac.h
 )
-add_library(asf::sam::drivers::gmac::KSZ8051MNL ALIAS asf_sam_drivers_gmac_KSZ8051MNL)
+add_library(asf::sam::drivers::gmac::ksz8051mnx ALIAS asf_sam_drivers_gmac_ksz8051mnx)
 
-target_include_directories(asf_sam_drivers_gmac_KSZ8051MNL
+target_include_directories(asf_sam_drivers_gmac_ksz8051mnx
     PUBLIC 
         ${CMAKE_CURRENT_SOURCE_DIR}
         ${CMAKE_CURRENT_SOURCE_DIR}/module_config
 )
 
 target_link_libraries(
-    asf_sam_drivers_gmac_KSZ8051MNL
+    asf_sam_drivers_gmac_ksz8051mnx
     PUBLIC 
         asf::sam::utils
         asf::common::boards
 )
 
-add_library(asf_sam_drivers_gmac_KSZ8061RNB STATIC
+add_library(asf_sam_drivers_gmac_ksz8061rnb STATIC
     gmac_phy.c
     gmac_raw_2.c
     gmac_raw_2.h
     gmac.h
 )
-add_library(asf::sam::drivers::gmac::KSZ8061RNB ALIAS asf_sam_drivers_gmac_KSZ8061RNB)
+add_library(asf::sam::drivers::gmac::ksz8061rnb ALIAS asf_sam_drivers_gmac_ksz8061rnb)
 
-target_include_directories(asf_sam_drivers_gmac_KSZ8061RNB
+target_include_directories(asf_sam_drivers_gmac_ksz8061rnb
     PUBLIC 
         ${CMAKE_CURRENT_SOURCE_DIR}
         ${CMAKE_CURRENT_SOURCE_DIR}/module_config
 )
 
 target_link_libraries(
-    asf_sam_drivers_gmac_KSZ8061RNB
+    asf_sam_drivers_gmac_ksz8061rnb
     PUBLIC 
         asf::sam::utils
         asf::common::boards
