@@ -16,4 +16,5 @@ target_link_libraries(
     asf_sam_components_ethernet_phy_ksz8081mnx 
     PUBLIC 
         asf::sam::utils
+        asf::sam::drivers::gmac
 )
