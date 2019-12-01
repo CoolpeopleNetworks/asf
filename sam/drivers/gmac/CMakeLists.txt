@@ -21,8 +21,8 @@ add_library(asf::sam::drivers::gmac::ksz8051mnl ALIAS asf_sam_drivers_gmac_ksz80
 target_link_libraries(
     asf_sam_drivers_gmac_ksz8051mnl
     PUBLIC 
-        asf::sam::utils
         asf::common::boards
+        asf::sam::utils
         asf::sam::drivers::gmac
 )
 
@@ -37,7 +37,7 @@ add_library(asf::sam::drivers::gmac::ksz8061rnb ALIAS asf_sam_drivers_gmac_ksz80
 target_link_libraries(
     asf_sam_drivers_gmac_ksz8061rnb
     PUBLIC 
-        asf::sam::utils
         asf::common::boards
+        asf::sam::utils
         asf::sam::drivers::gmac
 )
