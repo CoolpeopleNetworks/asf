@@ -2,6 +2,7 @@ cmake_minimum_required(VERSION 3.15)
 project(asf_common_services_storage_ctrl_access)
 
 add_library(asf_common_services_storage_ctrl_access STATIC
+    conf_access.h
     ctrl_access.c
     ctrl_access.h
 )
@@ -18,4 +19,11 @@ target_link_libraries(
     PUBLIC 
         asf::common::utils
         asf::${ASF_FAMILY_DIRECTORY}::utils
+)
+
+target_compile_definitions(
+    asf_common_services_storage_ctrl_access
+    PUBLIC
+        SD_MMC_ENABLE
+        ACCESS_MEM_TO_RAM_ENABLED=1
 )
