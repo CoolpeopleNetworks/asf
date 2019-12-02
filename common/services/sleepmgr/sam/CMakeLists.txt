@@ -18,4 +18,5 @@ target_link_libraries(
     INTERFACE 
         asf::common::utils
         asf::common::services::clock
+        asf::${ASF_FAMILY_DIRECTORY}::utils
 )
