@@ -9,13 +9,13 @@ add_library(asf::common::services::sleepmgr::sam ALIAS asf_common_services_sleep
 
 target_include_directories(
     asf_common_services_sleepmgr_sam
-    INTERFACE 
+    PUBLIC 
         ${CMAKE_CURRENT_SOURCE_DIR}
 )
 
 target_link_libraries(
     asf_common_services_sleepmgr_sam
-    INTERFACE 
+    PUBLIC 
         asf::common::utils
         asf::common::services::clock
         asf::${ASF_FAMILY_DIRECTORY}::utils
