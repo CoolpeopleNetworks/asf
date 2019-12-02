@@ -18,4 +18,5 @@ target_link_libraries(
         asf::sam::utils
         asf::common::boards
         asf::common::services::clock
+        asf::common::services::sleepmgr
 )
