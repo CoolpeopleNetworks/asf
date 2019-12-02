@@ -19,6 +19,7 @@ target_link_libraries(
     PUBLIC 
         asf::common::boards
         asf::sam::utils
+        asf::sam::drivers::pmc
         asf::thirdparty::freertos
         asf::thirdparty::lwip::1.4.1
 )
