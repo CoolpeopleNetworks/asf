@@ -20,6 +20,7 @@ target_link_libraries(
         asf::common::boards
         asf::sam::utils
         asf::sam::drivers::pmc
+        asf::sam::drivers::gmac
         asf::thirdparty::freertos
         asf::thirdparty::lwip::1.4.1
 )
