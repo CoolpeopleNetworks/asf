@@ -47,6 +47,7 @@ target_include_directories(
     PUBLIC
         ${CMAKE_CURRENT_SOURCE_DIR}/include
         ${CMAKE_CURRENT_SOURCE_DIR}/include/ipv4
+        ${CMAKE_CURRENT_SOURCE_DIR}/include/posix
         ${CMAKE_CURRENT_SOURCE_DIR}/module_config
 )
 
