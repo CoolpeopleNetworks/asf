@@ -222,7 +222,7 @@ inet_ntoa(struct in_addr addr)
  * Note ntohs() and ntohl() are merely references to the htonx counterparts.
  */
 
-#if (LWIP_PLATFORM_BYTESWAP == 0) && (BYTE_ORDER == LITTLE_ENDIAN)
+#if (LWIP_PLATFORM_BYTESWAP == 0) && (LWIP_BYTE_ORDER == LITTLE_ENDIAN)
 
 /**
  * Convert an u16_t from host- to network byte order.
@@ -275,4 +275,4 @@ ntohl(u32_t n)
   return htonl(n);
 }
 
-#endif /* (LWIP_PLATFORM_BYTESWAP == 0) && (BYTE_ORDER == LITTLE_ENDIAN) */
+#endif /* (LWIP_PLATFORM_BYTESWAP == 0) && (LWIP_BYTE_ORDER == LITTLE_ENDIAN) */

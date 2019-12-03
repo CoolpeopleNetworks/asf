@@ -69,12 +69,12 @@ char *inet_ntoa(struct in_addr addr); /* returns ptr to static buffer; not reent
 #define LWIP_PLATFORM_BYTESWAP 0
 #endif
 
-#if BYTE_ORDER == BIG_ENDIAN
+#if LWIP_BYTE_ORDER == BIG_ENDIAN
 #define htons(x) (x)
 #define ntohs(x) (x)
 #define htonl(x) (x)
 #define ntohl(x) (x)
-#else /* BYTE_ORDER != BIG_ENDIAN */
+#else /* LWIP_BYTE_ORDER != BIG_ENDIAN */
 #ifdef LWIP_PREFIX_BYTEORDER_FUNCS
 /* workaround for naming collisions on some platforms */
 #define htons lwip_htons
@@ -94,7 +94,7 @@ u32_t htonl(u32_t x);
 u32_t ntohl(u32_t x);
 #endif /* LWIP_PLATFORM_BYTESWAP */
 
-#endif /* BYTE_ORDER == BIG_ENDIAN */
+#endif /* LWIP_BYTE_ORDER == BIG_ENDIAN */
 
 #ifdef __cplusplus
 }

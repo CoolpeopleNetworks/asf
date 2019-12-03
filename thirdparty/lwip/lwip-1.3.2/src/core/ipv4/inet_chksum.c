@@ -66,7 +66,7 @@
 #endif
 
 /** Like the name says... */
-#if LWIP_PLATFORM_BYTESWAP && (BYTE_ORDER == LITTLE_ENDIAN)
+#if LWIP_PLATFORM_BYTESWAP && (LWIP_BYTE_ORDER == LITTLE_ENDIAN)
 /* little endian and PLATFORM_BYTESWAP defined */
 #define SWAP_BYTES_IN_WORD(w) LWIP_PLATFORM_HTONS(w)
 #else

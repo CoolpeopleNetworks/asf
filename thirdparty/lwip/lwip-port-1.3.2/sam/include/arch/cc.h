@@ -35,7 +35,7 @@
 #define CC_H_INCLUDED
 
 /* Define platform endianness */
-#define BYTE_ORDER LITTLE_ENDIAN
+#define LWIP_BYTE_ORDER LITTLE_ENDIAN
 
 /* The unsigned data types */
 typedef unsigned char u8_t;

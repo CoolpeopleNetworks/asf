@@ -85,7 +85,7 @@ extern const ip6_addr_t ip6_addr_any;
 #define IP6_ADDR_ANY         ((ip6_addr_t *)&ip6_addr_any)
 
 
-#if BYTE_ORDER == BIG_ENDIAN
+#if LWIP_BYTE_ORDER == BIG_ENDIAN
 /** Set an IPv6 partial address given by byte-parts. */
 #define IP6_ADDR(ip6addr, index, a,b,c,d) \
   (ip6addr)->addr[index] = ((u32_t)((a) & 0xff) << 24) | \
