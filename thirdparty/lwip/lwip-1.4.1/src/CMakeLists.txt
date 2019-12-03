@@ -59,3 +59,7 @@ target_link_libraries(
         asf::thirdparty::lwip::1.4.1::port
         asf::thirdparty::freertos
 )
+
+if (ASF_LWIP_ENABLE_DHCP)
+    target_compile_definitions(asf_thirdparty_lwip_1_4_1 LWIP_DHCP=1)
+endif()
