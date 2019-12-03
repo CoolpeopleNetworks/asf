@@ -11,6 +11,7 @@ target_include_directories(
     asf_common_services_sleepmgr_sam
     INTERFACE 
         ${CMAKE_CURRENT_SOURCE_DIR}
+        ${CMAKE_CURRENT_SOURCE_DIR}/module_config
 )
 
 target_link_libraries(
