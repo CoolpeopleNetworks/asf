@@ -48,7 +48,6 @@
 
 #include "pmc.h"
 #include "gmac.h"
-#include "gmac_raw.h"
 #include "ethernet_phy.h"
 #include "netif/ethernetif.h"
 #include "sysclk.h"
