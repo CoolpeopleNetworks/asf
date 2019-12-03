@@ -63,6 +63,7 @@ to exclude the API function. */
 #define INCLUDE_pcTaskGetTaskName               0
 #define INCLUDE_eTaskGetState                   0
 #define INCLUDE_pcTaskGetTaskName               1
+#define INCLUDE_vTaskCleanUpResources	        1
 
 /* Normal assert() semantics without relying on the provision of an assert.h
 header file. */
