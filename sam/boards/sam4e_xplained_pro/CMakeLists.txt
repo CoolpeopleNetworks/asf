@@ -35,7 +35,7 @@ target_include_directories(
 
 target_link_libraries(
     asf_sam_boards_sam4e_xplained_pro 
-    PRIVATE
+    PUBLIC
         asf::sam::boards 
         asf::sam::utils 
         asf::common::boards 
