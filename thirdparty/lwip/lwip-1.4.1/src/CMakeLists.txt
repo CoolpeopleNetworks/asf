@@ -61,5 +61,5 @@ target_link_libraries(
 )
 
 if (ASF_LWIP_ENABLE_DHCP)
-    target_compile_definitions(asf_thirdparty_lwip_1_4_1 LWIP_DHCP=1)
+    target_compile_definitions(asf_thirdparty_lwip_1_4_1 PRIVATE LWIP_DHCP=1)
 endif()
