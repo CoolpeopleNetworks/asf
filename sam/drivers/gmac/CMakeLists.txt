@@ -4,6 +4,8 @@ project(asf_sam_drivers_gmac)
 add_library(asf_sam_drivers_gmac INTERFACE)
 add_library(asf::sam::drivers::gmac ALIAS asf_sam_drivers_gmac)
 
+option(ASF_SAM_DRIVER_GMAC_USE_FREERTOS "Enable FreeRTOS synchronization primitives in GMAC driver." OFF)
+
 target_include_directories(asf_sam_drivers_gmac
     INTERFACE
         ${CMAKE_CURRENT_SOURCE_DIR}
@@ -25,6 +27,10 @@ target_link_libraries(
         asf::sam::utils
         asf::sam::drivers::gmac
 )
+
+if (ASF_SAM_DRIVER_GMAC_USE_FREERTOS)
+    target_compile_definitions(asf_sam_drivers_gmac_ksz8051mnl PRIVATE FREERTOS_USED)
+endif()
 
 add_library(asf_sam_drivers_gmac_ksz8061rnb STATIC
     gmac_phy.c
