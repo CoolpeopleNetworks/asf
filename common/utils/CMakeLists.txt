@@ -1,6 +1,7 @@
 cmake_minimum_required(VERSION 3.15)
 project(asf_common_utils)
 
+add_subdirectory(interrupt)
 add_subdirectory(stdio)
 
 add_library(asf_common_utils INTERFACE)
