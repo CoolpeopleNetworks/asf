@@ -56,6 +56,10 @@
 #include "lwip/inet_chksum.h"
 #endif
 
+#ifndef LWIP_PROVIDE_ERRNO
+#include <errno.h>
+#endif
+
 #include <string.h>
 
 #define NUM_SOCKETS MEMP_NUM_NETCONN
