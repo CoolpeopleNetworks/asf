@@ -22,6 +22,7 @@ target_link_libraries(
         asf::sam::utils
         asf::sam::drivers::pmc
         asf::sam::drivers::gmac
+        asf::sam::drivers::gmac::ksz8051mnl // REMOVEME
         asf::common::services::clock
         asf::sam::components::ethernet_phy
         asf::thirdparty::freertos
