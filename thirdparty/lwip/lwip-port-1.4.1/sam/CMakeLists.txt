@@ -22,6 +22,7 @@ target_link_libraries(
         asf::sam::utils
         asf::sam::drivers::pmc
         asf::sam::drivers::gmac
+        asf::common::services::clock
         asf::sam::components::ethernet_phy
         asf::thirdparty::freertos
         asf::thirdparty::lwip::1.4.1
