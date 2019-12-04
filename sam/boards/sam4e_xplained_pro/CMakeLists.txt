@@ -5,6 +5,9 @@ option(ASF_ENABLE_CAN "Enable support for the Controller Area Network (CAN) Peri
 option(ASF_ENABLE_SRAM "Enable support for the external SRAM interface" Off)
 option(ASF_ENABLE_SD_MMC_HSMCI "Enable support for the SD Card" Off)
 
+set(ASF_GMAC_MODEL "ksz8051mnl")
+set(ASF_ETHERNET_PHY_MODEL "ksz8081mnx")
+
 add_library(asf_sam_boards_sam4e_xplained_pro STATIC
     init.c
     led.h
