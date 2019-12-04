@@ -9,6 +9,7 @@ add_library(asf::sam::drivers::gmac ALIAS asf_sam_drivers_gmac)
 target_include_directories(asf_sam_drivers_gmac
     INTERFACE
     ${CMAKE_CURRENT_SOURCE_DIR}
+    ${CMAKE_CURRENT_SOURCE_DIR}/module_config
 )
 
 if (ASF_GMAC_MODEL)
