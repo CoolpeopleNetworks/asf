@@ -11,11 +11,6 @@ target_include_libraries(asf_sam_drivers_gmac
     ${CMAKE_CURRENT_SOURCE_DIR}
 )
 
-target_link_libraries(asf_sam_drivers_gmac
-    INTERFACE
-        asf::sam:drivers::gmac::${ASF_GMAC_MODEL}
-)
-
 if (ASF_GMAC_MODEL)
     add_subdirectory(${ASF_GMAC_MODEL})
 
