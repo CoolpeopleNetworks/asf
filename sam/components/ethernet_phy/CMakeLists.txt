@@ -9,5 +9,6 @@ if (ASF_ETHERNET_PHY_MODEL)
 
     target_link_libraries(asf_sam_components_ethernet_phy 
         INTERFACE
-        asf::sam::components::ethernet_phy::${ASF_ETHERNET_PHY_MODEL})
+        asf::sam::components::ethernet_phy::${ASF_ETHERNET_PHY_MODEL}
+    )
 endif()
