@@ -9,8 +9,8 @@ add_library(asf_thirdparty_fatfs STATIC
     fatfs-r0.09/src/ff.h
     fatfs-r0.09/src/ffconf.h
     fatfs-r0.09/src/integer.h
-    fatfs-40.09/src/option/ccsbcs.c
-    fatfs-40.09/src/option/syscall.c
+    fatfs-r0.09/src/option/ccsbcs.c
+    fatfs-r0.09/src/option/syscall.c
 )
 add_library(asf::thirdparty::fatfs ALIAS asf_thirdparty_fatfs)
 
