@@ -30,3 +30,17 @@ target_compile_definitions(
         SD_MMC_ENABLE
         ACCESS_MEM_TO_RAM_ENABLED=1
 )
+
+if (ASF_FREERTOS_USED)
+    target_compile_definitions(
+        asf_common_services_storage_ctrl_access
+        PUBLIC
+            FREERTOS_USED
+    )
+
+    target_link_libraries(
+        asf_common_services_storage_ctrl_access
+        PUBLIC
+            asf::thirdparty::freertos
+    )
+endif()
