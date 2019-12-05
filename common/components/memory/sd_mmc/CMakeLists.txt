@@ -31,7 +31,7 @@ target_link_libraries(
         asf::${ASF_FAMILY_DIRECTORY}::drivers::hsmci
 )
 
-target_compile_definitions(asf_common_components_memory_sd_mmc_mci PRIVATE SD_MMC_0_MEM=ENABLE)
+target_compile_definitions(asf_common_components_memory_sd_mmc_mci PRIVATE SD_MMC_0_MEM=1)
 
 # add_library(asf_common_components_memory_sd_mmc_spi STATIC
 #     conf_sd_mmc.h
