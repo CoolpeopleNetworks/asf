@@ -31,7 +31,7 @@ target_compile_definitions(
         ACCESS_MEM_TO_RAM_ENABLED=1
 )
 
-if (ASF_FREERTOS_USED)
+if (ASF_USE_FREERTOS)
     target_compile_definitions(
         asf_common_services_storage_ctrl_access
         PUBLIC
