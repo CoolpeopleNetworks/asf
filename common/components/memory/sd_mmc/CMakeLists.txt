@@ -42,6 +42,20 @@ target_compile_definitions(asf_common_components_memory_sd_mmc_mci
         ACCESS_MEM_TO_RAM_ENABLED=1
 )
 
+if (ASF_USE_FREERTOS)
+    target_compile_definitions(
+        asf_common_components_memory_sd_mmc_mci
+        PUBLIC
+            FREERTOS_USED
+    )
+
+    target_link_libraries(
+        asf_common_components_memory_sd_mmc_mci
+        PUBLIC
+            asf::thirdparty::freertos
+    )
+endif()
+
 # add_library(asf_common_components_memory_sd_mmc_spi STATIC
 #     conf_sd_mmc.h
 #     sd_mmc_spi.c
