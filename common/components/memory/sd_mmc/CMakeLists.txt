@@ -16,6 +16,7 @@ add_library(asf::common::components::memory::sd_mmc::mci ALIAS asf_common_compon
 target_include_directories(asf_common_components_memory_sd_mmc_mci 
     PUBLIC 
         ${CMAKE_CURRENT_SOURCE_DIR}
+        ${CMAKE_CURRENT_SOURCE_DIR}/module_config
 )
 
 target_link_libraries(
