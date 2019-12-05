@@ -5,6 +5,7 @@ add_subdirectory(fpu)
 add_subdirectory(header_files)
 add_subdirectory(preprocessor)
 add_subdirectory(cmsis/${ASF_CHIP_FAMILY})
+add_subdirectory(syscalls)
 
 add_library(asf_sam_utils INTERFACE)
 add_library(asf::sam::utils ALIAS asf_sam_utils)
@@ -18,4 +19,5 @@ target_link_libraries(
         asf::sam::utils::header_files 
         asf::sam::utils::preprocessor 
         asf::sam::utils::cmsis::${ASF_CHIP_FAMILY}
+        asf::sam::utils::syscalls
 )
