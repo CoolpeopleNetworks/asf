@@ -3,7 +3,11 @@ project(asf_common_components_memory_sd_mmc)
 
 add_library(asf_common_components_memory_sd_mmc INTERFACE)
 add_library(asf::common::components::memory::sd_mmc ALIAS asf_common_components_memory_sd_mmc)
-target_include_directories(asf_common_components_memory_sd_mmc INTERFACE ${CMAKE_CURRENT_SOURCE_DIR})
+
+target_include_directories(asf_common_components_memory_sd_mmc 
+    INTERFACE 
+        ${CMAKE_CURRENT_SOURCE_DIR}
+)
 
 add_library(asf_common_components_memory_sd_mmc_mci STATIC
     sd_mmc_mem.c
@@ -34,8 +38,8 @@ target_link_libraries(
 
 target_compile_definitions(asf_common_components_memory_sd_mmc_mci 
     PUBLIC
-        SD_MMC_MCI_ENABLE 
-#        SD_MMC_0_MEM=1
+        SD_MMC_ENABLE
+        ACCESS_MEM_TO_RAM_ENABLED=1
 )
 
 # add_library(asf_common_components_memory_sd_mmc_spi STATIC
