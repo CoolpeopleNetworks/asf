@@ -3,6 +3,7 @@
 
 #include "conf_lwip_threads.h"
 
+#define LWIP_DHCP                   1
 #define LWIP_AUTOIP                 1
 #define LWIP_DHCP_AUTOIP_COOP       1
 #define LWIP_DHCP_AUTOIP_COOP_TRIES 4
