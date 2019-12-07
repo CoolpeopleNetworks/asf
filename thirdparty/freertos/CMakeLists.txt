@@ -1,5 +1,8 @@
 cmake_minimum_required(VERSION 3.15)
 project(asf_thirdparty_freertos)
 
-#add_subdirectory(freertos-8.0.1)
-add_subdirectory(freertos-8.2.3)
+if (NOT ASF_FREERTOS_VERSION)
+    set(ASF_FREERTOS_VERSION 10.0.0)
+endif()
+
+add_subdirectory(freertos-${ASF_FREERTOS_VERSION})
