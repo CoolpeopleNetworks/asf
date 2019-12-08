@@ -4,6 +4,7 @@ project(asf_thirdparty_freertos_8_2_3)
 add_library(asf_thirdparty_freertos_portable STATIC
     Source/portable/GCC/ARM_CM4F/port.c
     Source/portable/GCC/ARM_CM4F/portmacro.h
+    Source/portable/MemMang/heap_5.c
 )
 add_library(asf::thirdparty::freertos::portable ALIAS asf_thirdparty_freertos_portable)
 
