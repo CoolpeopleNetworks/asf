@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.15)
 project(asf_thirdparty_lwip_1_4_1)
 
-add_library(asf_thirdparty_lwip_1_4_1 STATIC
+add_library(asf_thirdparty_lwip STATIC
     api/api_lib.c
     api/api_msg.c
     api/err.c
@@ -40,10 +40,10 @@ add_library(asf_thirdparty_lwip_1_4_1 STATIC
     netif/etharp.c
     netif/ethernetif.c
 )
-add_library(asf::thirdparty::lwip::1.4.1 ALIAS asf_thirdparty_lwip_1_4_1)
+add_library(asf::thirdparty::lwip ALIAS asf_thirdparty_lwip)
 
 target_include_directories(
-    asf_thirdparty_lwip_1_4_1
+    asf_thirdparty_lwip
     PUBLIC
         ${CMAKE_CURRENT_SOURCE_DIR}/include
         ${CMAKE_CURRENT_SOURCE_DIR}/include/ipv4
@@ -52,18 +52,18 @@ target_include_directories(
 )
 
 target_link_libraries(
-    asf_thirdparty_lwip_1_4_1
+    asf_thirdparty_lwip
     PUBLIC 
         asf::common::boards
         asf::sam::utils
-        asf::thirdparty::lwip::1.4.1::port
+        asf::thirdparty::lwip::port
         asf::thirdparty::freertos
 )
 
 if (ASF_LWIP_ENABLE_DHCP)
-    target_compile_definitions(asf_thirdparty_lwip_1_4_1 PRIVATE LWIP_DHCP=1)
+    target_compile_definitions(asf_thirdparty_lwip PRIVATE LWIP_DHCP=1)
 endif()
 
 if (ASF_LWIP_ENABLE_NETIF)
-    target_compile_definitions(asf_thirdparty_lwip_1_4_1 PRIVATE LWIP_NETIF_API=1)
+    target_compile_definitions(asf_thirdparty_lwip PRIVATE LWIP_NETIF_API=1)
 endif()
