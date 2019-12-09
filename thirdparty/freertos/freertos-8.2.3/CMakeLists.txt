@@ -25,7 +25,6 @@ target_include_directories(asf_thirdparty_freertos
 
 target_link_libraries(asf_thirdparty_freertos
     PUBLIC
-        asf::thirdparty::freertos::portable
         asf::common::boards
         asf::sam::boards
 )
