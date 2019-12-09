@@ -24,5 +24,5 @@ target_include_directories(asf_thirdparty_fatfs
 target_link_libraries(asf_thirdparty_fatfs
     PUBLIC
         asf::common::services::storage::ctrl_access
-        asf::${ASF_FAMILY_DIRECTORY}::rtc
+        asf::${ASF_FAMILY_DIRECTORY}::drivers::rtc
 )
