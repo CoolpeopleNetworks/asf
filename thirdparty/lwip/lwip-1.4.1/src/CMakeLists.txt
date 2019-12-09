@@ -39,6 +39,10 @@ add_library(asf_thirdparty_lwip STATIC
 
     netif/etharp.c
     netif/ethernetif.c
+
+    ../../lwip-port-1.4.1/sam/sys_arch.c
+    ../../lwip-port-1.4.1/sam/netif/ethernetif_sam4.c
+    ../../lwip-port-1.4.1/sam/netif/sam4e_gmac.c
 )
 add_library(asf::thirdparty::lwip ALIAS asf_thirdparty_lwip)
 
@@ -49,15 +53,20 @@ target_include_directories(
         ${CMAKE_CURRENT_SOURCE_DIR}/include/ipv4
         ${CMAKE_CURRENT_SOURCE_DIR}/include/posix
         ${CMAKE_CURRENT_SOURCE_DIR}/module_config
+        ${CMAKE_CURRENT_SOURCE_DIR}/../../lwip-port-1.4.1/include
+        ${CMAKE_CURRENT_SOURCE_DIR}/../../lwip-port-1.4.1/module_config
 )
 
 target_link_libraries(
     asf_thirdparty_lwip
     PUBLIC 
         asf::common::boards
-        asf::sam::utils
-        asf::thirdparty::lwip::port
         asf::thirdparty::freertos
+        asf::sam::utils
+        asf::sam::drivers::pmc
+        asf::sam::drivers::gmac
+        asf::common::services::clock
+        asf::sam::components::ethernet_phy
 )
 
 if (ASF_LWIP_ENABLE_DHCP)

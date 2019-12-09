@@ -8,5 +8,4 @@ if (NOT ASF_LWIP_VERSION)
     set(ASF_LWIP_VERSION 1.4.1)
 endif()
 
-add_subdirectory(lwip-port-${ASF_LWIP_VERSION}/${ASF_FAMILY_DIRECTORY})
 add_subdirectory(lwip-${ASF_LWIP_VERSION}/src)

@@ -23,7 +23,6 @@ target_link_libraries(
     asf_common_services_clock_sam4e
     PUBLIC
         asf::common::boards
-        asf::common::services::clock::${ASF_CHIP_FAMILY}
         asf::${ASF_FAMILY_DIRECTORY}::boards
         asf::${ASF_FAMILY_DIRECTORY}::drivers::pmc
 )
