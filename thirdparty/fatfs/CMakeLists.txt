@@ -1,8 +1,6 @@
 cmake_minimum_required(VERSION 3.15)
 project(asf_thirdparty_fatfs)
 
-add_subdirectory(fatfs-port-r0.09)
-
 add_library(asf_thirdparty_fatfs STATIC
     fatfs-r0.09/src/diskio.h
     fatfs-r0.09/src/ff.c
@@ -11,6 +9,9 @@ add_library(asf_thirdparty_fatfs STATIC
     fatfs-r0.09/src/integer.h
     fatfs-r0.09/src/option/ccsbcs.c
     fatfs-r0.09/src/option/syscall.c
+
+    fatfs-port-r0.09/src/diskio.c
+    fatfs-port-r0.09/src/sam/fattime_rtc.c
 )
 add_library(asf::thirdparty::fatfs ALIAS asf_thirdparty_fatfs)
 
@@ -22,5 +23,5 @@ target_include_directories(asf_thirdparty_fatfs
 
 target_link_libraries(asf_thirdparty_fatfs
     PUBLIC
-        asf::thirdparty::fatfs::port
+        asf::common::services::storage::ctrl_access
 )
