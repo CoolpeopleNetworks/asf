@@ -20,3 +20,8 @@ target_include_directories(asf_sam_utils
         ${CMAKE_CURRENT_SOURCE_DIR}/preprocessor
         ${CMAKE_CURRENT_SOURCE_DIR}/cmsis/${ASF_CHIP_FAMILY}/include
 )
+
+target_link_libraries(asf_sam_utils
+    PUBLIC
+        asf::thirdparty::cmsis
+)
