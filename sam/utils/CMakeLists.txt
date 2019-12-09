@@ -19,4 +19,5 @@ target_include_directories(asf_sam_utils
         ${CMAKE_CURRENT_SOURCE_DIR}/header_files
         ${CMAKE_CURRENT_SOURCE_DIR}/preprocessor
         ${CMAKE_CURRENT_SOURCE_DIR}/cmsis/${ASF_CHIP_FAMILY}/include
+        ${CMAKE_CURRENT_SOURCE_DIR}/cmsis/${ASF_CHIP_FAMILY}/source/templates
 )
