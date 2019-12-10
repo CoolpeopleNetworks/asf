@@ -42,16 +42,6 @@
 		SAM4CM || SAMG || SAM4CP || SAMV71 || SAMV70 || SAMS70 || SAME70)
 # include "pmc.h"
 
-#ifdef COOLPEOPLE
-# include "board.h"
-
-/* Checking board configuration of main clock xtal statup time */
-#if !defined(BOARD_OSC_STARTUP_US)
-# warning The board main clock xtal statup time has not been defined. Using default settings.
-# define BOARD_OSC_STARTUP_US    (15625UL)
-#endif
-#endif
-
 #if !defined(EFC0)
 # define EFC0 EFC
 #endif
