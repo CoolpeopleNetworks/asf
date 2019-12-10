@@ -39,9 +39,8 @@ target_include_directories(
 target_link_libraries(
     asf_sam_boards_sam4e_xplained_pro 
     PUBLIC
-        asf::sam::boards 
         asf::sam::utils 
-        asf::common::boards 
-        asf::common::services
-        asf::thirdparty::cmsis
+#        asf::common::boards 
+#        asf::common::services
+#        asf::thirdparty::cmsis
 )
