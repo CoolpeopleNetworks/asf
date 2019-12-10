@@ -20,5 +20,4 @@ target_include_directories(asf_common_utils
 target_link_libraries(asf_common_utils
     PUBLIC
         asf::common::boards
-#        asf::common::services::serial
 )
