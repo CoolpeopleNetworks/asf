@@ -43,7 +43,5 @@ target_link_libraries(
         asf::sam::utils 
         asf::common::boards 
         asf::common::services
-        asf::common::utils::interrupt::sam
-        asf::common::utils::stdio
         asf::thirdparty::cmsis
 )
