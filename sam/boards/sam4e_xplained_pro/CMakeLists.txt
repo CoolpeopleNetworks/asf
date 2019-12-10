@@ -41,7 +41,5 @@ target_link_libraries(
     PUBLIC
         asf::sam::utils
         asf::sam::boards
-#        asf::common::boards 
         asf::common::services::ioport
-#        asf::thirdparty::cmsis
 )
