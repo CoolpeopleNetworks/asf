@@ -24,5 +24,6 @@ target_include_directories(asf_sam_utils
 
 target_link_libraries(asf_sam_utils
     PUBLIC
+        asf::common::utils
         asf::thirdparty::cmsis
 )
