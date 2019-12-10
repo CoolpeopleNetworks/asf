@@ -67,6 +67,7 @@ target_link_libraries(
         asf::sam::drivers::gmac
         asf::common::services::clock
         asf::sam::components::ethernet_phy
+        asf::common::services::ioport
 )
 
 if (ASF_LWIP_ENABLE_DHCP)

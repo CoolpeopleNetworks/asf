@@ -15,6 +15,5 @@ target_include_directories(
 target_link_libraries(
     asf_common_services_clock
     INTERFACE
-        asf::common::services::ioport
         asf::common::services::clock::${ASF_CHIP_FAMILY}
 )
