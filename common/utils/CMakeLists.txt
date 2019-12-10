@@ -6,7 +6,7 @@ add_library(asf_common_utils STATIC
     interrupt/interrupt_sam_nvic.h
 
     stdio/read.c
-    stdio.write.c
+    stdio/write.c
 )
 add_library(asf::common::utils ALIAS asf_common_utils)
 
