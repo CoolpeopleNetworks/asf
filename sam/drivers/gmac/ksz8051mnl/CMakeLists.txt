@@ -24,6 +24,6 @@ target_link_libraries(
 )
 
 if (ASF_USE_FREERTOS)
-    target_compile_definitions(asf_sam_drivers_gmac_ksz8051mnl PRIVATE FREERTOS_USED)
-    target_link_libraries(asf_sam_drivers_gmac_ksz8051mnl PRIVATE asf::thirdparty::freertos)
+    target_compile_definitions(asf_sam_drivers_gmac_ksz8051mnl PUBLIC FREERTOS_USED)
+    target_link_libraries(asf_sam_drivers_gmac_ksz8051mnl PUBLIC asf::thirdparty::freertos)
 endif()
