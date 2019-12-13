@@ -19,7 +19,7 @@ target_link_libraries(
     PUBLIC 
         asf::common::utils
         asf::common::boards
-        asf::common::components::memory::sd_mmc
+        asf::common::components::memory::sd_mmc::mci
         asf::${ASF_FAMILY_DIRECTORY}::utils
         asf::${ASF_FAMILY_DIRECTORY}::boards
 )
