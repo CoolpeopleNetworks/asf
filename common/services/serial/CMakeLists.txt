@@ -11,6 +11,7 @@ target_include_directories(
     asf_common_services_serial 
     PUBLIC 
         ${CMAKE_CURRENT_SOURCE_DIR}
+        ${CMAKE_CURRENT_SOURCE_DIR}/sam_uart
 )
 
 target_link_libraries(
