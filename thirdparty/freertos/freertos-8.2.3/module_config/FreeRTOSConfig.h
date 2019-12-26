@@ -154,4 +154,7 @@ to all Cortex-M ports, and do not rely on any particular library functions. */
 header file. */
 #define configASSERT( x ) if( ( x ) == 0 ) { taskDISABLE_INTERRUPTS(); abort(); }
 
+extern uint32_t portGetRunTimeCounterValue(void);
+#define portGET_RUN_TIME_COUNTER_VALUE() portGetRunTimeCounterValue()
+
 #endif /* FREERTOS_CONFIG_H */
