@@ -123,7 +123,7 @@
 /**
  * \brief Set aligned boundary.
  */
-#if (defined __GNUC__) || (defined __CC_ARM)
+#if (defined __GNUC__) || (defined __CC_ARM) || (defined __clang__)
 #   define COMPILER_ALIGNED(a)    __attribute__((__aligned__(a)))
 #elif (defined __ICCARM__)
 #   define COMPILER_ALIGNED(a)    COMPILER_PRAGMA(data_alignment = a)
@@ -132,7 +132,7 @@
 /**
  * \brief Set word-aligned boundary.
  */
-#if (defined __GNUC__) || defined(__CC_ARM)
+#if (defined __GNUC__) || (defined __CC_ARM) || (defined __clang__)
 #define COMPILER_WORD_ALIGNED    __attribute__((__aligned__(4)))
 #elif (defined __ICCARM__)
 #define COMPILER_WORD_ALIGNED    COMPILER_PRAGMA(data_alignment = 4)
@@ -148,7 +148,7 @@
  */
 #if defined(__CC_ARM)
 #   define __always_inline   __forceinline
-#elif (defined __GNUC__)
+#elif (defined __GNUC__) || (defined __clang__)
 #ifdef __always_inline
 #	undef __always_inline
 #endif
@@ -166,7 +166,7 @@
  */
 #if defined(__CC_ARM)
 #   define __no_inline   __attribute__((noinline))
-#elif (defined __GNUC__)
+#elif (defined __GNUC__) || (defined __clang__)
 #	define __no_inline   __attribute__((__noinline__))
 #elif (defined __ICCARM__)
 #	define __no_inline   _Pragma("inline=never")
@@ -203,6 +203,8 @@
 #   define WEAK __weak
 #elif defined (  __GNUC__  ) /* GCC CS3 2009q3-68 */
 #   define WEAK __attribute__ ((weak))
+#elif defined (  __clang__  )
+#   define WEAK __attribute__ ((weak))
 #endif
 
 /* Define NO_INIT attribute */
@@ -210,7 +212,7 @@
 #   define NO_INIT __attribute__((zero_init))
 #elif defined ( __ICCARM__ )
 #   define NO_INIT __no_init
-#elif defined (  __GNUC__  )
+#elif defined (  __GNUC__  ) || defined (__clang__)
 #   define NO_INIT __attribute__((section(".no_init")))
 #endif
 
@@ -219,7 +221,7 @@
 #   define RAMFUNC __attribute__ ((section(".ramfunc")))
 #elif defined ( __ICCARM__ ) /* IAR Ewarm 5.41+ */
 #   define RAMFUNC __ramfunc
-#elif defined (  __GNUC__  ) /* GCC CS3 2009q3-68 */
+#elif defined (  __GNUC__  ) || defined ( __clang__ )/* GCC CS3 2009q3-68 */
 #   define RAMFUNC __attribute__ ((section(".ramfunc")))
 #endif
 
@@ -228,7 +230,7 @@
 #   define OPTIMIZE_HIGH _Pragma("O3") 
 #elif defined ( __ICCARM__ ) /* IAR Ewarm 5.41+ */
 #   define OPTIMIZE_HIGH _Pragma("optimize=high")
-#elif defined (  __GNUC__  ) /* GCC CS3 2009q3-68 */
+#elif defined (  __GNUC__  ) || defined (  __clang__ )/* GCC CS3 2009q3-68 */
 #   define OPTIMIZE_HIGH __attribute__((optimize("s")))
 #endif
 
@@ -571,7 +573,7 @@ typedef struct
  *
  * \return The count of leading zero bits in \a u.
  */
-#if (defined __GNUC__) || (defined __CC_ARM)
+#if (defined __GNUC__) || (defined __CC_ARM) || (defined __clang__)
 #   define clz(u)              ((u) ? __builtin_clz(u) : 32)
 #elif (defined __ICCARM__)
 #   define clz(u)              ((u) ? __CLZ(u) : 32)
@@ -617,7 +619,7 @@ typedef struct
  *
  * \return The count of trailing zero bits in \a u.
  */
-#if (defined __GNUC__) || (defined __CC_ARM)
+#if (defined __GNUC__) || (defined __CC_ARM) || (defined __clang__)
 #   define ctz(u)              ((u) ? __builtin_ctz(u) : 32)
 #else
 #   define ctz(u)              ((u) & (1ul <<  0) ?  0 : \
@@ -970,7 +972,7 @@ typedef struct
  *
  * \note More optimized if only used with values unknown at compile time.
  */
-#if (defined __GNUC__)
+#if (defined __GNUC__) || (defined __clang__)
 #   define swap32(u32) ((U32)__builtin_bswap32((U32)(u32)))
 #else
 #   define swap32(u32) Swap32(u32)
@@ -984,7 +986,7 @@ typedef struct
  *
  * \note More optimized if only used with values unknown at compile time.
  */
-#if (defined __GNUC__)
+#if (defined __GNUC__) || (defined __clang__)
 #   define swap64(u64) ((U64)__builtin_bswap64((U64)(u64)))
 #else
 #   define swap64(u64) ((U64)(((U64)swap32((U64)(u64) >> 32)) |\
@@ -1038,14 +1040,14 @@ typedef U8                  Byte;       //!< 8-bit unsigned integer.
 
 #if defined(__ICCARM__)
 #define SHORTENUM           __packed
-#elif defined(__GNUC__)
+#elif defined(__GNUC__) || defined(__clang__)
 #define SHORTENUM           __attribute__((packed))
 #endif
 
 /* No operation */
 #if defined(__ICCARM__)
 #define nop()               __no_operation()
-#elif defined(__GNUC__)
+#elif defined(__GNUC__) || defined(__clang__)
 #define nop()               __NOP()
 #endif
 
