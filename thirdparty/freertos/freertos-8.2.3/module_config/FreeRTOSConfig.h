@@ -152,20 +152,6 @@ to all Cortex-M ports, and do not rely on any particular library functions. */
 
 /* Normal assert() semantics without relying on the provision of an assert.h
 header file. */
-#ifdef __cplusplus
-extern "C"
-#else
-extern
-#endif
-
-#include <assert.h>
-#define configASSERT assert
-#define INCLUDE_MODULE_TEST 0
-
-#define portCONFIGURE_TIMER_FOR_RUN_TIME_STATS() ;
-
-extern uint32_t cl_timer_get_value(void);
-#define portGET_RUN_TIME_COUNTER_VALUE() cl_timer_get_value()
+#define configASSERT( x ) if( ( x ) == 0 ) { taskDISABLE_INTERRUPTS(); abort(); }
 
 #endif /* FREERTOS_CONFIG_H */
-
