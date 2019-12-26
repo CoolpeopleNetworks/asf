@@ -156,5 +156,6 @@ header file. */
 
 extern uint32_t portGetRunTimeCounterValue(void);
 #define portGET_RUN_TIME_COUNTER_VALUE() portGetRunTimeCounterValue()
+#define portCONFIGURE_TIMER_FOR_RUN_TIME_STATS() ;
 
 #endif /* FREERTOS_CONFIG_H */
