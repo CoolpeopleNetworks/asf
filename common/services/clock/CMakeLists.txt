@@ -19,6 +19,7 @@ add_library(asf::common::services::clock ALIAS asf_common_services_clock)
 target_include_directories(
     asf_common_services_clock
     PUBLIC
+        ${CMAKE_CURRENT_SOURCE_DIR}
         ${CMAKE_CURRENT_SOURCE_DIR}/${ASF_CHIP_FAMILY}/module_config
 )
 
