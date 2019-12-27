@@ -158,4 +158,10 @@ extern uint32_t portGetRunTimeCounterValue(void);
 #define portGET_RUN_TIME_COUNTER_VALUE() portGetRunTimeCounterValue()
 #define portCONFIGURE_TIMER_FOR_RUN_TIME_STATS() ;
 
+/* Definitions that map the FreeRTOS port interrupt handlers to their CMSIS
+standard names - or at least those used in the unmodified vector table. */
+#define vPortSVCHandler                         SVC_Handler
+#define xPortPendSVHandler                      PendSV_Handler
+#define xPortSysTickHandler                     SysTick_Handler
+
 #endif /* FREERTOS_CONFIG_H */
