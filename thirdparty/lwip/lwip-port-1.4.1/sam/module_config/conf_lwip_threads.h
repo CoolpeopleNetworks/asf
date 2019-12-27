@@ -54,6 +54,8 @@
 /** define stack size for netif task */
 #define netifINTERFACE_TASK_STACK_SIZE    2048
 
+#define TCPIP_THREAD_STACKSIZE            2048
+
 /** define WEB server priority */
 #define lwipBASIC_WEB_SERVER_PRIORITY     (tskIDLE_PRIORITY + 2)
 
