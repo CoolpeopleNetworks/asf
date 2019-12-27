@@ -34,7 +34,7 @@
 #define DEFAULT_TCP_RECVMBOX_SIZE   16
 #define DEFAULT_UDP_RECVMBOX_SIZE   16
 
-#define netifINTERFACE_TASK_STACK_SIZE  1024
+#define netifINTERFACE_TASK_STACK_SIZE  4096
 
 #include <errno.h>
 
