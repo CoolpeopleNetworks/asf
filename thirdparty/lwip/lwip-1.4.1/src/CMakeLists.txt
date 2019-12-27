@@ -1,6 +1,8 @@
 cmake_minimum_required(VERSION 3.15)
 project(asf_thirdparty_lwip_1_4_1)
 
+set(CMAKE_BUILD_TYPE Debug) // BUGBUG COOLPEOPLE
+
 add_library(asf_thirdparty_lwip STATIC
     api/api_lib.c
     api/api_msg.c
