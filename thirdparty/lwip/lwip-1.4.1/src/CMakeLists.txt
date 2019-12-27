@@ -1,7 +1,9 @@
 cmake_minimum_required(VERSION 3.15)
 project(asf_thirdparty_lwip_1_4_1)
 
-set(CMAKE_BUILD_TYPE Debug) # BUGBUG COOLPEOPLE
+if (ASF_LWIP_BUILD_TYPE)
+    set(CMAKE_BUILD_TYPE ${ASF_LWIP_BUILD_TYPE})
+endif()
 
 add_library(asf_thirdparty_lwip STATIC
     api/api_lib.c
