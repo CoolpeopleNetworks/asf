@@ -28,6 +28,14 @@
 
 #define SO_REUSE                    1
 
+#define TCPIP_MBOX_SIZE             16
+#define DEFAULT_ACCEPTMBOX_SIZE     16
+#define DEFAULT_RAW_RECVMBOX_SIZE   16
+#define DEFAULT_TCP_RECVMBOX_SIZE   16
+#define DEFAULT_UDP_RECVMBOX_SIZE   16
+
+#define netifINTERFACE_TASK_STACK_SIZE  1024
+
 #include <errno.h>
 
 #endif
