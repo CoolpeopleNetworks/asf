@@ -43,7 +43,8 @@
 #define MEMP_OVERFLOW_CHECK         2
 
 #define PBUF_POOL_SIZE              10
-#define PBUF_POOL_BUFSIZE           GMAC_FRAME_LENTGH_MAX
+#define MEM_ALIGNMENT               4
+#define PBUF_POOL_BUFSIZE           1536
 
 #include <errno.h>
 
