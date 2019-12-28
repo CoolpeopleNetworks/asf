@@ -34,6 +34,17 @@
 #define DEFAULT_TCP_RECVMBOX_SIZE   16
 #define DEFAULT_UDP_RECVMBOX_SIZE   16
 
+#define MEMP_NUM_TCP_PCB            32
+#define MEMP_NUM_TCP_PCB_LISTEN     16
+#define MEMP_NUM_PBUF               128
+#define MEMP_NUM_NETBUF             32
+#define MEMP_NUM_NETCONN            32
+
+#define MEMP_OVERFLOW_CHECK         2
+
+#define PBUF_POOL_SIZE              10
+#define PBUF_POOL_BUFSIZE           GMAC_FRAME_LENTGH_MAX
+
 #include <errno.h>
 
 #endif
