@@ -47,6 +47,12 @@
 #define MEM_ALIGNMENT               4
 #define PBUF_POOL_BUFSIZE           1536
 
+#define LWIP_ERROR(message, expression, handler) { if (!(expression)) { abort(); } }
+#define LWIP_PLATFORM_ASSERT(message) { abort(); }
+#define LWIP_PLATFORM_DIAG(message) ;
+
+#define SYS_LIGHTWEIGHT_PROT        1
+
 #include <errno.h>
 
 #endif

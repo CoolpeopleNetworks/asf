@@ -81,3 +81,7 @@ endif()
 if (ASF_LWIP_ENABLE_NETIF)
     target_compile_definitions(asf_thirdparty_lwip PRIVATE LWIP_NETIF_API=1)
 endif()
+
+if (ASF_LWIP_DEBUG)
+    target_compile_definitions(asf_thirdparty_lwip PRIVATE LWIP_DEBUG=1)    
+endif()
