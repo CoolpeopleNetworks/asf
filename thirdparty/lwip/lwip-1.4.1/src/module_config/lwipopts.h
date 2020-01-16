@@ -55,4 +55,7 @@
 
 #include <errno.h>
 
+#define MEM_LIBC_MALLOC                 1
+#define MEM_USE_POOLS                   0
+
 #endif
