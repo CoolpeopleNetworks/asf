@@ -66,5 +66,6 @@
 #define LWIP_DBG_TYPES_ON               LWIP_DBG_ON
 #define DHCP_DEBUG                      LWIP_DBG_ON
 #define AUTOIP_DEBUG                    LWIP_DBG_ON
+#define UDP_DEBUG                       LWIP_DBG_ON
 
 #endif
