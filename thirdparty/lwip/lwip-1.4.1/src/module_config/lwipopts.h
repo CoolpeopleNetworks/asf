@@ -52,8 +52,6 @@
 
 #ifndef LWIP_PLATFORM_DIAG
 #define LWIP_PLATFORM_DIAG(message) ;
-#else
-void LWIP_PLATFORM_DIAG(const char *);
 #endif
 
 #define SYS_LIGHTWEIGHT_PROT        1
