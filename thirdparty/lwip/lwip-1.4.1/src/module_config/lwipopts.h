@@ -49,7 +49,10 @@
 
 #define LWIP_ERROR(message, expression, handler) { if (!(expression)) { abort(); } }
 #define LWIP_PLATFORM_ASSERT(message) { abort(); }
+
+#ifndef LWIP_PLATFORM_DIAG
 #define LWIP_PLATFORM_DIAG(message) ;
+#endif
 
 #define SYS_LIGHTWEIGHT_PROT        1
 
@@ -57,5 +60,11 @@
 
 #define MEM_LIBC_MALLOC                 1
 #define MEM_USE_POOLS                   0
+
+// DEBUGGING
+#define LWIP_DBG_MIN_LEVEL              LWIP_DBG_LEVEL_ALL
+#define LWIP_DBG_TYPES_ON               LWIP_DBG_ON
+#define DHCP_DEBUG                      LWIP_DBG_OFF
+#define AUTOIP_DEBUG                    LWIP_DBG_OFF
 
 #endif
