@@ -35,8 +35,12 @@
 #define DEFAULT_UDP_RECVMBOX_SIZE   16
 
 #define MEM_LIBC_MALLOC             1
-#define MEMP_MEM_MALLOC             0
-#define MEM_USE_POOLS               1
+#define MEMP_MEM_MALLOC             1
+#define MEM_USE_POOLS               0
+
+#define mem_malloc malloc
+#define mem_free   free
+#define mem_calloc calloc
 
 #define MEMP_NUM_TCP_PCB            32
 #define MEMP_NUM_TCP_PCB_LISTEN     16
