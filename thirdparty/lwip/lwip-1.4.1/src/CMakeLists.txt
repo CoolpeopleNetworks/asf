@@ -85,7 +85,3 @@ endif()
 if (ASF_LWIP_DEBUG_ENABLE)
     target_compile_definitions(asf_thirdparty_lwip PRIVATE LWIP_DEBUG=1)    
 endif()
-
-if (ASF_LWIP_DEBUG_OUT)
-    target_compile_definitions(asf_thirdparty_lwip PRIVATE LWIP_PLATFORM_DIAG=ASF_LWIP_DEBUG_OUT)
-endif()

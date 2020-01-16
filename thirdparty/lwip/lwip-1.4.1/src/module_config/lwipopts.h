@@ -64,7 +64,7 @@
 // DEBUGGING
 #define LWIP_DBG_MIN_LEVEL              LWIP_DBG_LEVEL_ALL
 #define LWIP_DBG_TYPES_ON               LWIP_DBG_ON
-#define DHCP_DEBUG                      LWIP_DBG_OFF
-#define AUTOIP_DEBUG                    LWIP_DBG_OFF
+#define DHCP_DEBUG                      LWIP_DBG_ON
+#define AUTOIP_DEBUG                    LWIP_DBG_ON
 
 #endif
