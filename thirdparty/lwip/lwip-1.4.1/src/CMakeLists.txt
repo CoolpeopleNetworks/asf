@@ -45,6 +45,7 @@ add_library(asf_thirdparty_lwip STATIC
     netif/ethernetif.c
 
     ../../lwip-port-1.4.1/sam/sys_arch.c
+    ../../lwip-port-1.4.1/sam/netif/ethernetif_sam4.c
     ../../lwip-port-1.4.1/sam/netif/sam4e_gmac.c
 )
 add_library(asf::thirdparty::lwip ALIAS asf_thirdparty_lwip)
