@@ -58,8 +58,8 @@
 
 #include <errno.h>
 
-#define MEM_LIBC_MALLOC                 1
-#define MEM_USE_POOLS                   0
+//#define MEM_LIBC_MALLOC                 1
+//#define MEM_USE_POOLS                   0
 
 // DEBUGGING
 #define LWIP_DBG_MIN_LEVEL              LWIP_DBG_LEVEL_ALL
@@ -67,5 +67,7 @@
 #define DHCP_DEBUG                      LWIP_DBG_ON
 #define AUTOIP_DEBUG                    LWIP_DBG_ON
 #define UDP_DEBUG                       LWIP_DBG_ON
+#define MEM_DEBUG                       LWIP_DBG_ON
+#define MEMP_DEBUG                      LWIP_DBG_ON
 
 #endif
