@@ -34,7 +34,10 @@
 #define DEFAULT_TCP_RECVMBOX_SIZE   16
 #define DEFAULT_UDP_RECVMBOX_SIZE   16
 
-#define MEMP_MEM_MALLOC             1
+#define MEM_LIBC_MALLOC             1
+#define MEMP_MEM_MALLOC             0
+#define MEM_USE_POOLS               1
+
 #define MEMP_NUM_TCP_PCB            32
 #define MEMP_NUM_TCP_PCB_LISTEN     16
 #define MEMP_NUM_PBUF               128
@@ -57,9 +60,6 @@
 #define SYS_LIGHTWEIGHT_PROT        1
 
 #include <errno.h>
-
-//#define MEM_LIBC_MALLOC                 1
-//#define MEM_USE_POOLS                   0
 
 // DEBUGGING
 #define LWIP_DBG_MIN_LEVEL              LWIP_DBG_LEVEL_ALL
