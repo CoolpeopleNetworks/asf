@@ -324,8 +324,16 @@ u32_t sys_arch_mbox_fetch(sys_mbox_t *mbox, void **msg, u32_t timeout)
 		TickStart = xTaskGetTickCount();
 		/* If "timeout" is 0, the thread should be blocked until
 		 * a message arrives */
-		while (pdFALSE == xQueueReceive( *mbox, &(*msg),
+
+        if (*mbox == NULL) {
+          return(SYS_ARCH_TIMEOUT);
+        }
+
+		while (pdFALSE == xQueueReceive( *mbox, &(*msg), 
 				SYS_ARCH_BLOCKING_TICKTIMEOUT )) {
+			if (*mbox == NULL) {
+				return(SYS_ARCH_TIMEOUT);
+			}
 		}
 	} else {
 		TickStart = xTaskGetTickCount();
