@@ -70,9 +70,9 @@
 #define LWIP_DBG_TYPES_ON               LWIP_DBG_ON
 #define DHCP_DEBUG                      LWIP_DBG_ON
 #define AUTOIP_DEBUG                    LWIP_DBG_ON
-#define UDP_DEBUG                       LWIP_DBG_ON
+#define UDP_DEBUG                       LWIP_DBG_OFF
 #define MEM_DEBUG                       LWIP_DBG_OFF
 #define MEMP_DEBUG                      LWIP_DBG_OFF
-#define IP_DEBUG                        LWIP_DBG_ON
-
+#define IP_DEBUG                        LWIP_DBG_OFF
+#define TCPIP_DEBUG                     LWIP_DBG_ON
 #endif
