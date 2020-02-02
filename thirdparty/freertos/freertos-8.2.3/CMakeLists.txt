@@ -11,7 +11,7 @@ add_library(asf_thirdparty_freertos STATIC
 
     Source/portable/GCC/ARM_CM4F/port.c
     Source/portable/GCC/ARM_CM4F/portmacro.h
-    Source/portable/MemMang/heap_5.c
+    Source/portable/MemMang/${ASF_FREERTOS_HEAP_SOURCE_FILENAME}
 )
 add_library(asf::thirdparty::freertos ALIAS asf_thirdparty_freertos)
 
