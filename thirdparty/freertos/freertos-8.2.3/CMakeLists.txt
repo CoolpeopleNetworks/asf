@@ -28,3 +28,8 @@ target_link_libraries(asf_thirdparty_freertos
         asf::common::boards
         asf::sam::boards
 )
+
+target_compile_definitions(asf_thirdparty_freertos
+    PRIVATE
+        configTOTAL_HEAP_SIZE=${ASF_FREERTOS_HEAP_TOTAL_SIZE}
+)
