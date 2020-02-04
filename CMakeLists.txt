@@ -6,11 +6,13 @@ if (NOT ASF_BOARD)
 endif()
 
 if (ASF_BOARD STREQUAL "sam4e_xplained_pro")
+    message("Building for sam4e_xplained_pro")
     set(ASF_FAMILY_DIRECTORY "sam")
     set(ASF_CHIP_FAMILY "sam4e")
 endif()
 
 if (ASF_BOARD STREQUAL "same70_xplained")
+    message("Building for same70_xplained")
     set(ASF_FAMILY_DIRECTORY "sam")
     set(ASF_CHIP_FAMILY "same70")
 endif()
