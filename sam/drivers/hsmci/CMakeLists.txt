@@ -12,7 +12,7 @@ target_include_directories(asf_sam_drivers_hsmci
         ${CMAKE_CURRENT_SOURCE_DIR}
 )
 
-if (${ASF_CHIP_FAMILY} STREQUAL "same70")
+if (ASF_CHIP_FAMILY STREQUAL "same70")
     target_link_libraries(
         asf_sam_drivers_hsmci
         PUBLIC 
