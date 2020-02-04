@@ -6,7 +6,7 @@ option(ASF_ENABLE_DRAM "Enable support for the DRAM controller" Off)
 option(ASF_ENABLE_SD_MMC_HSMCI "Enable support for the SD Card" Off)
 
 set(ASF_GMAC_MODEL "ksz8061mb" CACHE STRING "")
-set(ASF_ETHERNET_PHY_MODEL "ksz8081ma" CACHE STRING "")
+set(ASF_ETHERNET_PHY_MODEL "ksz8081rna" CACHE STRING "")
 
 add_library(asf_sam_boards_same70_xplained STATIC
     init.c
