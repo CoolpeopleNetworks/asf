@@ -17,4 +17,5 @@ target_link_libraries(
     PUBLIC 
         asf::sam::utils
         asf::sam::drivers::gmac
+        asf::sam::drivers::pio
 )
