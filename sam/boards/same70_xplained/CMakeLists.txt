@@ -4,9 +4,8 @@ project(asf_sam_boards_same70_xplained)
 option(ASF_ENABLE_CAN "Enable support for the Controller Area Network (CAN) Peripheral" Off)
 option(ASF_ENABLE_DRAM "Enable support for the DRAM controller" Off)
 option(ASF_ENABLE_SD_MMC_HSMCI "Enable support for the SD Card" Off)
-option(ASF_ENABLE_KSZ8051MNL "Enable the KXZ8051MNL GMAC" Off)
 
-set(ASF_GMAC_MODEL "ksz8051mnl" CACHE STRING "")
+set(ASF_GMAC_MODEL "ksz8061mb" CACHE STRING "")
 set(ASF_ETHERNET_PHY_MODEL "ksz8081ma" CACHE STRING "")
 
 add_library(asf_sam_boards_same70_xplained STATIC
@@ -28,10 +27,6 @@ endif()
 
 if (ASF_ENABLE_SD_MMC_HSMCI)
     target_compile_definitions(asf_sam_boards_same70_xplained PUBLIC CONF_BOARD_SD_MMC_HSMCI)
-endif()
-
-if (ASF_ENABLE_KSZ8051MNL)
-    target_compile_definitions(asf_sam_boards_same70_xplained PUBLIC CONF_BOARD_KSZ8051MNL)
 endif()
 
 target_include_directories(
