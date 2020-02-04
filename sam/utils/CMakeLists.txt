@@ -4,7 +4,7 @@ project(asf_sam_utils)
 add_library(asf_sam_utils STATIC
     syscalls/gcc/syscalls.c
 
-    cmsis/${ASF_CHIP_FAMILY}/source/templates/gcc/startup_sam4e.c
+    cmsis/${ASF_CHIP_FAMILY}/source/templates/gcc/startup_${ASF_CHIP_FAMILY}.c
     cmsis/${ASF_CHIP_FAMILY}/source/templates/exceptions.c
     cmsis/${ASF_CHIP_FAMILY}/source/templates/exceptions.h
     cmsis/${ASF_CHIP_FAMILY}/source/templates/system_sam4e.c
