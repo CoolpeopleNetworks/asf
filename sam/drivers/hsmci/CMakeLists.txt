@@ -12,11 +12,23 @@ target_include_directories(asf_sam_drivers_hsmci
         ${CMAKE_CURRENT_SOURCE_DIR}
 )
 
-target_link_libraries(
-    asf_sam_drivers_hsmci
-    PUBLIC 
-        asf::sam::utils
-        asf::common::boards
-        asf::common::services::clock
-        asf::common::components::memory::sd_mmc
-)
+if (${ASF_CHIP_FAMILY} STREQUAL "same70")
+    target_link_libraries(
+        asf_sam_drivers_hsmci
+        PUBLIC 
+            asf::sam::utils
+            asf::common::boards
+            asf::common::services::clock
+            asf::common::components::memory::sd_mmc
+            asf::sam::drivers::xdmac
+    )
+else()
+    target_link_libraries(
+        asf_sam_drivers_hsmci
+        PUBLIC 
+            asf::sam::utils
+            asf::common::boards
+            asf::common::services::clock
+            asf::common::components::memory::sd_mmc
+    )
+endif()
