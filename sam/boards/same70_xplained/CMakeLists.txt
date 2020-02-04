@@ -46,5 +46,6 @@ target_link_libraries(
     PUBLIC
         asf::sam::utils
         asf::sam::boards
+        asf::sam::drivers::pio
         asf::common::services::ioport
 )
