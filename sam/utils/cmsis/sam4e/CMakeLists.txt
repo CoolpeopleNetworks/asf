@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.15)
-project(asf_sam_utils)
+project(asf_sam_utils_cmsis_sam4e)
 
 add_library(asf_sam_utils_cmsis_sam4e STATIC
     source/templates/gcc/startup_sam4e.c
