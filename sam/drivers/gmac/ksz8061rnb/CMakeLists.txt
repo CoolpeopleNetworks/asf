@@ -9,9 +9,10 @@ add_library(asf_sam_drivers_gmac_ksz8061rnb STATIC
 )
 add_library(asf::sam::drivers::gmac::ksz8061rnb ALIAS asf_sam_drivers_gmac_ksz8061rnb)
 
-target_include_directories(asf_sam_drivers_gmac_ksz8061rnb
-    INTERFACE
-        ${CMAKE_CURRENT_SOURCE_DIR}..
+target_include_directories(
+    asf_sam_drivers_gmac_ksz8061rnb
+    PUBLIC
+        ${CMAKE_CURRENT_SOURCE_DIR}/..
         ${CMAKE_CURRENT_SOURCE_DIR}/../module_config
 )
 
