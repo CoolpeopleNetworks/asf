@@ -14,7 +14,7 @@ add_library(asf_sam_boards_same70_xplained STATIC
     led.h
     same70_xplained.h
     )
-add_library(asf::sam::boards::sam70_xplained ALIAS asf_sam_boards_same70_xplained)
+add_library(asf::sam::boards::same70_xplained ALIAS asf_sam_boards_same70_xplained)
 
 target_compile_definitions(asf_sam_boards_same70_xplained PUBLIC __SAME70Q21__)
 
