@@ -1,0 +1,7 @@
+cmake_minimum_required(VERSION 3.15)
+project(asf_thirdparty_cmsis)
+
+add_library(asf_thirdparty_cmsis INTERFACE)
+add_library(asf::thirdparty::cmsis ALIAS asf_thirdparty_cmsis)
+
+target_include_directories(asf_thirdparty_cmsis INTERFACE ${CMAKE_CURRENT_SOURCE_DIR}/Include)

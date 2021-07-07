@@ -38,6 +38,8 @@
 #include "gmac.h"
 #include "conf_eth.h"
 
+#pragma clang optimize off // JWT added
+
 /// @cond 0
 /**INDENT-OFF**/
 #ifdef __cplusplus

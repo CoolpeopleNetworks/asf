@@ -1,3 +1,49 @@
+/**
+ *
+ * \file
+ *
+ * \brief Generic FreeRTOS peripheral control functions
+ *
+ *
+ * Copyright (c) 2012-2015 Atmel Corporation. All rights reserved.
+ *
+ * \asf_license_start
+ *
+ * \page License
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions are met:
+ *
+ * 1. Redistributions of source code must retain the above copyright notice,
+ *    this list of conditions and the following disclaimer.
+ *
+ * 2. Redistributions in binary form must reproduce the above copyright notice,
+ *    this list of conditions and the following disclaimer in the documentation
+ *    and/or other materials provided with the distribution.
+ *
+ * 3. The name of Atmel may not be used to endorse or promote products derived
+ *    from this software without specific prior written permission.
+ *
+ * 4. This software may only be redistributed and used in connection with an
+ *    Atmel microcontroller product.
+ *
+ * THIS SOFTWARE IS PROVIDED BY ATMEL "AS IS" AND ANY EXPRESS OR IMPLIED
+ * WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT ARE
+ * EXPRESSLY AND SPECIFICALLY DISCLAIMED. IN NO EVENT SHALL ATMEL BE LIABLE FOR
+ * ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+ * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+ * OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+ * HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,
+ * STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
+ * ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+ * POSSIBILITY OF SUCH DAMAGE.
+ *
+ * \asf_license_stop
+ *
+ */
+
+
 #ifndef FREERTOS_CONFIG_H
 #define FREERTOS_CONFIG_H
 
@@ -27,34 +73,22 @@
 #define configUSE_TICK_HOOK						1
 #define configCPU_CLOCK_HZ						( BOARD_MCK << 1UL )
 #define configTICK_RATE_HZ						( 1000 )
-#define configMAX_PRIORITIES					( 5 )
+#define configMAX_PRIORITIES					( 7 )
 #define configMINIMAL_STACK_SIZE				( ( unsigned short ) 130 )
-#define configTOTAL_HEAP_SIZE					( ( size_t ) ( 46 * 1024 ) )
-#define configMAX_TASK_NAME_LEN					( 10 )
+
+#define configMAX_TASK_NAME_LEN					( 16 )
 #define configUSE_TRACE_FACILITY				1
 #define configUSE_16_BIT_TICKS					0
 #define configIDLE_SHOULD_YIELD					1
 #define configUSE_MUTEXES						1
 #define configQUEUE_REGISTRY_SIZE				8
-#define configCHECK_FOR_STACK_OVERFLOW			2
+#define configCHECK_FOR_STACK_OVERFLOW			1
 #define configUSE_RECURSIVE_MUTEXES				1
 #define configUSE_MALLOC_FAILED_HOOK			1
 #define configUSE_APPLICATION_TASK_TAG			0
 #define configUSE_COUNTING_SEMAPHORES			1
-
-/* The full demo always has tasks to run so the tick will never be turned off.
-The blinky demo will use the default tickless idle implementation to turn the
-tick off. */
-#define configUSE_TICKLESS_IDLE					0
-
-/* Run time stats gathering definitions. */
-#define configGENERATE_RUN_TIME_STATS	0
-
-/* This demo makes use of one or more example stats formatting functions.  These
-format the raw data provided by the uxTaskGetSystemState() function in to human
-readable ASCII form.  See the notes in the implementation of vTaskList() within
-FreeRTOS/Source/tasks.c for limitations. */
-#define configUSE_STATS_FORMATTING_FUNCTIONS	1
+#define configUSE_NEWLIB_REENTRANT      		1
+#define configGENERATE_RUN_TIME_STATS   		1
 
 /* Co-routine definitions. */
 #define configUSE_CO_ROUTINES 			0
@@ -75,37 +109,59 @@ to exclude the API function. */
 #define INCLUDE_vTaskSuspend			1
 #define INCLUDE_vTaskDelayUntil			1
 #define INCLUDE_vTaskDelay				1
-#define INCLUDE_eTaskGetState			1
-#define INCLUDE_xTimerPendFunctionCall	1
+#define INCLUDE_pcTaskGetTaskName       1
+#define INCLUDE_uxTaskGetStackHighWaterMark 1
+#define INCLUDE_xTaskGetIdleTaskHandle  1
+
+/* FreeRTOS+CLI definitions. */
+
+/* Dimensions a buffer into which command outputs can be written.  The buffer
+can be declared in the CLI code itself, to allow multiple command consoles to
+share the same buffer.  For example, an application may allow access to the
+command interpreter by UART and by Ethernet.  Sharing a buffer is done purely
+to save RAM.  Note, however, that the command console itself is not re-entrant,
+so only one command interpreter interface can be used at any one time.  For
+that reason, no attempt at providing mutual exclusion to the buffer is
+attempted. */
+#define configCOMMAND_INT_MAX_OUTPUT_SIZE 400
+
 
 /* Cortex-M specific definitions. */
+
 #ifdef __NVIC_PRIO_BITS
 	/* __BVIC_PRIO_BITS will be specified when CMSIS is being used. */
 	#define configPRIO_BITS       		__NVIC_PRIO_BITS
 #else
-	#define configPRIO_BITS       		3        /* 7 priority levels */
+	#define configPRIO_BITS       		4        /* 15 priority levels */
 #endif
 
 /* The lowest interrupt priority that can be used in a call to a "set priority"
 function. */
-#define configLIBRARY_LOWEST_INTERRUPT_PRIORITY			0x07
+#define configLIBRARY_LOWEST_INTERRUPT_PRIORITY			0x0f
 
 /* The highest interrupt priority that can be used by any interrupt service
 routine that makes calls to interrupt safe FreeRTOS API functions.  DO NOT CALL
 INTERRUPT SAFE FREERTOS API FUNCTIONS FROM ANY INTERRUPT THAT HAS A HIGHER
 PRIORITY THAN THIS! (higher priorities are lower numeric values. */
-#define configLIBRARY_MAX_SYSCALL_INTERRUPT_PRIORITY	4
+#define configLIBRARY_MAX_SYSCALL_INTERRUPT_PRIORITY	10
 
 /* Interrupt priorities used by the kernel port layer itself.  These are generic
 to all Cortex-M ports, and do not rely on any particular library functions. */
 #define configKERNEL_INTERRUPT_PRIORITY 		( configLIBRARY_LOWEST_INTERRUPT_PRIORITY << (8 - configPRIO_BITS) )
-/* !!!! configMAX_SYSCALL_INTERRUPT_PRIORITY must not be set to zero !!!!
-See http://www.FreeRTOS.org/RTOS-Cortex-M3-M4.html. */
 #define configMAX_SYSCALL_INTERRUPT_PRIORITY 	( configLIBRARY_MAX_SYSCALL_INTERRUPT_PRIORITY << (8 - configPRIO_BITS) )
 
 /* Normal assert() semantics without relying on the provision of an assert.h
 header file. */
-#define configASSERT( x ) if( ( x ) == 0 ) { taskDISABLE_INTERRUPTS(); for( ;; ); }
+#define configASSERT( x ) if( ( x ) == 0 ) { taskDISABLE_INTERRUPTS(); abort(); }
+
+extern uint32_t portGetRunTimeCounterValue(void);
+#define portGET_RUN_TIME_COUNTER_VALUE() portGetRunTimeCounterValue()
+#define portCONFIGURE_TIMER_FOR_RUN_TIME_STATS() ;
+
+/* Definitions that map the FreeRTOS port interrupt handlers to their CMSIS
+standard names - or at least those used in the unmodified vector table. */
+#define vPortSVCHandler                         SVC_Handler
+#define xPortPendSVHandler                      PendSV_Handler
+#define xPortSysTickHandler                     SysTick_Handler
 
 #endif /* FREERTOS_CONFIG_H */
-

@@ -48,6 +48,7 @@
 
 #include "pmc.h"
 #include "gmac.h"
+#include "gmac_raw.h"
 #include "ethernet_phy.h"
 #include "netif/ethernetif.h"
 #include "sysclk.h"
@@ -133,13 +134,15 @@ static void low_level_init(struct netif *netif)
 
 	/* Set MAC hardware address length */
 	netif->hwaddr_len = sizeof(gs_uc_mac_address);
-	/* Set MAC hardware address */
+	/* The ethernet MAC address must have been set before entry */
+#if 0
 	netif->hwaddr[0] = gs_uc_mac_address[0];
 	netif->hwaddr[1] = gs_uc_mac_address[1];
 	netif->hwaddr[2] = gs_uc_mac_address[2];
 	netif->hwaddr[3] = gs_uc_mac_address[3];
 	netif->hwaddr[4] = gs_uc_mac_address[4];
 	netif->hwaddr[5] = gs_uc_mac_address[5];
+#endif
 
 	/* Maximum transfer unit */
 	netif->mtu = NET_MTU;

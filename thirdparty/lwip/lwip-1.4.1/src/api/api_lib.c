@@ -295,6 +295,11 @@ netconn_accept(struct netconn *conn, struct netconn **new_conn)
     return err;
   }
 
+  // See if the acceptmbox is now NULL (meaning the connection was closed)
+  if (conn->acceptmbox == NULL) {
+    return ERR_CLSD;
+  }
+
 #if LWIP_SO_RCVTIMEO
   if (sys_arch_mbox_fetch(&conn->acceptmbox, (void **)&newconn, conn->recv_timeout) == SYS_ARCH_TIMEOUT) {
     NETCONN_SET_SAFE_ERR(conn, ERR_TIMEOUT);

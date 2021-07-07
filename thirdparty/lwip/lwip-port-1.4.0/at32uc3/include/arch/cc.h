@@ -41,9 +41,9 @@
 #include <sys/time.h>*/
 
 /* Define platform endianness */
-#ifndef BYTE_ORDER
-#define BYTE_ORDER BIG_ENDIAN
-#endif /* BYTE_ORDER */
+#ifndef LWIP_BYTE_ORDER
+#define LWIP_BYTE_ORDER BIG_ENDIAN
+#endif /* LWIP_BYTE_ORDER */
 
 /* Define generic types used in lwIP */
 typedef unsigned   char    u8_t;

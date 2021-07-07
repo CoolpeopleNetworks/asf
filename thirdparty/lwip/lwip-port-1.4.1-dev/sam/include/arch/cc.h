@@ -36,12 +36,12 @@
 
 #include "osprintf.h"
 
-#ifdef BYTE_ORDER
-#undef BYTE_ORDER
+#ifdef LWIP_BYTE_ORDER
+#undef LWIP_BYTE_ORDER
 #endif
 
 /* Define platform endianness */
-#define BYTE_ORDER LITTLE_ENDIAN
+#define LWIP_BYTE_ORDER LITTLE_ENDIAN
 
 /* The unsigned data types */
 typedef unsigned char u8_t;

@@ -38,7 +38,7 @@
 #include <stdint.h>
 
 /* Define platform endianness */
-#define BYTE_ORDER LITTLE_ENDIAN
+#define LWIP_BYTE_ORDER LITTLE_ENDIAN
 
 /* Types based on stdint.h */
 typedef uint8_t            u8_t;
@@ -85,9 +85,6 @@ typedef uintptr_t          mem_ptr_t;
     Refer CHANGELOG
 */
 #define  LWIP_COMPAT_MUTEX  1
-
-/* Make lwip/arch.h define the codes which are used throughout */
-#define LWIP_PROVIDE_ERRNO
 
 /* Debug facilities. LWIP_DEBUG must be defined to read output */
 #ifdef LWIP_DEBUG

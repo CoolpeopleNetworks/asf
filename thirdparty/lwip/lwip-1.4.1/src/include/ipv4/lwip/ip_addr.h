@@ -134,7 +134,7 @@ extern const ip_addr_t ip_addr_broadcast;
 #define IP_LOOPBACKNET      127                 /* official! */
 
 
-#if BYTE_ORDER == BIG_ENDIAN
+#if LWIP_BYTE_ORDER == LWIP_BIG_ENDIAN
 /** Set an IP address given by the four byte-parts */
 #define IP4_ADDR(ipaddr, a,b,c,d) \
         (ipaddr)->addr = ((u32_t)((a) & 0xff) << 24) | \
@@ -210,7 +210,7 @@ u8_t ip4_addr_netmask_valid(u32_t netmask);
 #define ip_addr_islinklocal(addr1) (((addr1)->addr & PP_HTONL(0xffff0000UL)) == PP_HTONL(0xa9fe0000UL))
 
 #define ip_addr_debug_print(debug, ipaddr) \
-  LWIP_DEBUGF(debug, ("%"U16_F".%"U16_F".%"U16_F".%"U16_F,             \
+  LWIP_DEBUGF(debug, ("%hu.%hu.%hu.%hu",             \
                       ipaddr != NULL ? ip4_addr1_16(ipaddr) : 0,       \
                       ipaddr != NULL ? ip4_addr2_16(ipaddr) : 0,       \
                       ipaddr != NULL ? ip4_addr3_16(ipaddr) : 0,       \

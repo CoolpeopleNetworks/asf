@@ -32,6 +32,7 @@
  * Author: Simon Goldschmidt
  *
  */
+#include "lwip/opt.h"
 
 #include "lwip/netdb.h"
 

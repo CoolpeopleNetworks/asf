@@ -422,10 +422,6 @@ __attribute__(( naked )) uint32_t ulPortSetInterruptMask( void )
 		"	bx lr													\n" \
 		:: "i" ( configMAX_SYSCALL_INTERRUPT_PRIORITY ) : "r0", "r1"	\
 	);
-
-	/* This return will not be reached but is necessary to prevent compiler
-	warnings. */
-	return 0;
 }
 /*-----------------------------------------------------------*/
 
@@ -437,9 +433,6 @@ __attribute__(( naked )) void vPortClearInterruptMask( uint32_t ulNewMaskValue )
 		"	bx lr												\n" \
 		:::"r0"														\
 	);
-
-	/* Just to avoid compiler warnings. */
-	( void ) ulNewMaskValue;
 }
 /*-----------------------------------------------------------*/
 

@@ -1,0 +1,1 @@
+This repository contains Microchip's (nee Atmel) ASF version 3.  It was created in order to add CMake support to help create non Atmel-Studio build environments using Microchip's MCUs.   The current focus is to add CMake support to the areas of ASF that are needed in projects I support.   As always, pull requests are welcome.   
